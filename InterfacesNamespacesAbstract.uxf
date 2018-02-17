@@ -1,4 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.2">
   <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>630</x>
+      <y>60</y>
+      <w>100</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>/AbstractClass/
+InputMethod</panel_attributes>
+    <additional_attributes/>
+  </element>
 </diagram>
