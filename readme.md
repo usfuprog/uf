@@ -1,7 +1,7 @@
 ﻿2018-02-17
 
 
- This is a small project, that help can learn foreign language. The main idea of the method:
+ This is a small project, that help can learn foreign language. The main idea of this method:
  1. You have database with english words, and their translation to the language you study(francais in my case).
  2. You want to select some of this words, and create output with method you choose. This output will be used to 
  create mp3 sound files to learn language. 
@@ -12,7 +12,7 @@
  eng2 IS fraX(choosed randomly from all selected words, or from database) OR fra2 on the line3
  eng3 IS fra3 OR fraX(choosed randomly from all selected words, or from database) on the line4
  
- This means, computer will take english word, and offer right and wrong tranlation, randomly on the first or 
+ This means, computer will take english word, and offer right and wrong translation, randomly on the first or 
  second place. This will activate choices beetween two possibilities(and also true/false answer) in brain, and 
  will made(I hope) study process more effective. 
  
