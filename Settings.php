@@ -4,14 +4,51 @@ require_once 'config.php';
 
 /**
  * Description of Settings
- *
+ * This class call by sprintf from outer code. It is return string, that contains actual settings. If there is no 
+ * settings in POST or GET method, class will return default settings, using constants from config.php
  * @author usfuprog
  */
-class Settings {
-
-public function __construct() 
- {
-    echo "La tristesse durera toujours";
- }
+class Settings 
+{
+    private $sett = "";
+    
+    /**
+     * Call function that will find POST or GET settings, or if they dont exists, create default settings
+     * @return type string
+     */
+    public function __toString() 
+    {
+        $this->postGetSettings();
+        !$this->sett && $this->defaultSettings();            
+        
+        return $this->sett;
+    }
+    /**
+     * Put settings from POST or GET in to the variable $sett. If they exists.
+     */
+    private function postGetSettings()
+    {
+        $get = filter_input_array(INPUT_GET);
+        $post = filter_input_array(INPUT_POST);
+        printf('%1$32b %2$32b <br>', $get, $post);
+        $tmp = $post ? $post : ($get ? $get : null);
+        
+        if (!$tmp)return;
+        
+        eee($tmp, __FILE__, __LINE__);
+        foreach ($tmp as $k => $v)
+        {
+            $this->sett .= "$k = $v; ";
+        }
+    }
+    
+    /**
+     * Create default settings using constants in config.php
+     */
+    private function defaultSettings()
+    {
+        $this->sett = sprintf('%1$s = %2$s; %3$s = %4$s; %5$s = %6$s;', 
+                TPL_INPUT_NAME, TPL_INPUT_DEFVAL, TPL_ALGO_NAME, TPL_ALGO_DEFVAL, TPL_OUTPUT_NAME, TPL_OUTPUT_DEFVAL);
+    }
     
 }

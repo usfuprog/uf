@@ -4,13 +4,14 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>880</x>
-      <y>70</y>
-      <w>100</w>
-      <h>50</h>
+      <x>860</x>
+      <y>50</y>
+      <w>140</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>config.php
-</panel_attributes>
+function eee
+($var, $file, $line)</panel_attributes>
     <additional_attributes/>
   </element>
   <element>

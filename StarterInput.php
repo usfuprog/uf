@@ -1,6 +1,6 @@
 <?php
 
-class StarterInput extends Settings
+class StarterInput
 {
     
 }
