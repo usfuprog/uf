@@ -24,6 +24,20 @@ class Settings
         return $this->sett;
     }
     /**
+     * @param string
+     * String $sett contains settings for all classes. This function extract settings to the class, that 
+     * defined by variable class. Each class identify by constant from config.php. 
+     * @return string
+    */
+    public function getSettings($class)
+    {
+        $localSett = explode("; ", $this->sett);
+        $localSett = preg_grep("/$class\s?=\s?[^;]+/", $localSett);
+        $localSett = preg_replace("/$class\s?=\s?/", "", current($localSett));//$localSett = last
+        //$localSett = preg_replace(array("/[^out]{3}|\w+\s=\s[^;]+/", "//"), "", $sett);//!
+        return $localSett;
+    }
+    /**
      * Put settings from POST or GET in to the variable $sett. If they exists.
      */
     private function postGetSettings()

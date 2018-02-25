@@ -9,7 +9,7 @@ DEFINE('TPL_OUTPUT_DEFVAL', 0);
 DEFINE('TPL_ALGO_NAME', 'algo');
 DEFINE('TPL_ALGO_DEFVAL', 0);
 //
-
+DEFINE('DIR_INPUT', 'input/');
 //
 /**
  * 

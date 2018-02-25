@@ -1,4 +1,5 @@
 <?php
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -6,12 +7,16 @@
  */
 
 /**
- * Description of OutputMethod
+ * Description of SelectManualy
  *
  * @author usfuprog
  */
-
-abstract class OutputMethod implements OutputExec
+class SelectManualy extends FromDb
 {
-    
+    public function __construct() 
+    {
+//        echo __DIR__;
+//        echo __FILE__;
+//        echo dirname(__FILE__);
+    }
 }

@@ -1,11 +1,12 @@
 <?php
 require_once 'Settings.php';
-
+require_once 'StarterInput.php';
 /**
  * Description of FormatPlainText
  * This class get settings from class which he is extends of, and create input, output and algorythm objects, with this 
- * settings. Also it provide few methods, that will calculate the results and show return them.
+ * settings. Also it provide few methods, that will calculate and return the results.
  * 
+ * @author usfuprog
 */
 class FormatePlainText extends Settings
 {
@@ -16,7 +17,10 @@ class FormatePlainText extends Settings
         $sett = sprintf($this);
         if (!$sett)
             throw new Exception("Settings FAIL !!!");
-        eee($sett, __FILE__, __LINE__);
+//        eee($sett, __FILE__, __LINE__);
+        $this->input = new StarterInput($this->getSettings(TPL_INPUT_NAME));
+        $this->algo = new StarterInput($this->getSettings(TPL_ALGO_NAME));//will be StarterAlgorytm
+        $this->output = new StarterInput($this->getSettings(TPL_OUTPUT_NAME));//will be StarterOutput
         
 //        eee($sett, __FILE__, __LINE__);
     } 
@@ -48,6 +52,10 @@ Die();
     <body>
         <form method="POST" action="<?php echo filter_input(INPUT_SERVER, 'PHP_SELF') ?>"> 
             
+            <select name="<?php echo TPL_INPUT_NAME ?>">
+                <option>choose randomly</option>
+                <option>select manualy</option>
+            </select>
             <select name="<?php echo TPL_ALGO_NAME ?>">
                 <option>1</option>
                 <option>2</option>
@@ -59,6 +67,6 @@ Die();
             </select>
             <button type="submit">>> GO >></button>
         </form>
-        <?php eee($obj, __FILE__, __LINE__) ?>
+        <?php //eee($obj, __FILE__, __LINE__) ?>
     </body>
 </html>
