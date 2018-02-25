@@ -22,12 +22,14 @@ DEFINE('TPL_ALGO_DEFVAL', 0);
  */
 function eee($var, $file, $line)
 {
-    echo "<br>" . $file . " : " . $line . " : <br>[";
-    
-    if (is_scalar($var))
-        echo nl2br($var);
-    else
-        var_dump($var);
+    $file = str_replace("\\", "/", $file);
+    echo "<br>" . 
+            str_pad(implode(preg_split("/^[\/|\w].*[\/{1}]/", $file, -1)), 100, ".", STR_PAD_LEFT) . 
+            " : " . $line . " : " . str_pad($file, 75, "~", STR_PAD_LEFT) . "<br>[";//                   "/[/]+[\w|\.]*$/"
+        
+    echo is_scalar($var) ? nl2br($var) : var_export($var, true);
+//    echo "________<br>";
+//    echo is_scalar($var) ? nl2br($var) : var_dump($var);
     
     echo "]<br>";
 }
