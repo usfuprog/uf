@@ -4,7 +4,7 @@ require_once 'InputMethod.php';
 /**
  * Description of FromDb
  *
- * @author nuvb
+ * @author usfuprog
  */
 abstract class FromDb extends InputMethod
 {

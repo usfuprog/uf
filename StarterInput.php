@@ -1,7 +1,7 @@
 <?php
 require_once DIR_INPUT . 'ChooseRandomly.php';
 require_once DIR_INPUT . 'SelectManualy.php';
-
+require_once DIR_INPUT . 'WriteManualy.php';
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -22,7 +22,7 @@ class StarterInput
     {
         $sett = $settIn;
         eee($sett, __FILE__, __LINE__);
-        $obj = new SelectManualy();
+        $obj = new WriteManualy();
     }
     
     

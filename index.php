@@ -19,7 +19,7 @@ class FormatePlainText extends Settings
             throw new Exception("Settings FAIL !!!");
 //        eee($sett, __FILE__, __LINE__);
         $this->input = new StarterInput($this->getSettings(TPL_INPUT_NAME));
-        $this->algo = new StarterInput($this->getSettings(TPL_ALGO_NAME));//will be StarterAlgorytm
+        $this->algo = new StarterInput($this->getSettings(TPL_ALGO_NAME));//will be StarterAlgorythm
         $this->output = new StarterInput($this->getSettings(TPL_OUTPUT_NAME));//will be StarterOutput
         
 //        eee($sett, __FILE__, __LINE__);

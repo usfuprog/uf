@@ -31,9 +31,12 @@ class Settings
     */
     public function getSettings($class)
     {
-        $localSett = explode("; ", $this->sett);
+//        eee($this->sett, __FILE__, __LINE__);
+        $localSett = explode(";", $this->sett);
+//        eee($localSett, __FILE__, __LINE__);
         $localSett = preg_grep("/$class\s?=\s?[^;]+/", $localSett);
-        $localSett = preg_replace("/$class\s?=\s?/", "", current($localSett));//$localSett = last
+//        eee($localSett, __FILE__, __LINE__);
+        $localSett = preg_replace("/[\s]*$class\s?=\s?/", "", current($localSett));//$localSett = last
         //$localSett = preg_replace(array("/[^out]{3}|\w+\s=\s[^;]+/", "//"), "", $sett);//!
         return $localSett;
     }

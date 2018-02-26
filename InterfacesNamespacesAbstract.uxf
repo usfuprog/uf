@@ -103,7 +103,7 @@ string getSettings(string)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>90</x>
+      <x>80</x>
       <y>210</y>
       <w>160</w>
       <h>50</h>
@@ -200,13 +200,13 @@ m2=provide
     <coordinates>
       <x>160</x>
       <y>250</y>
-      <w>80</w>
+      <w>70</w>
       <h>110</h>
     </coordinates>
     <panel_attributes>lt=-()
 m2=provide
 </panel_attributes>
-    <additional_attributes>10.0;90.0;20.0;10.0</additional_attributes>
+    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>

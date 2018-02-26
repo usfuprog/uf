@@ -1,6 +1,5 @@
 <?php
-require_once 'FromDb.php';
-
+require_once DIR_INPUT . 'FromDb.php';
 /**
  * Description of ChooseRandomly
  *
