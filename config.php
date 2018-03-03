@@ -11,6 +11,9 @@ DEFINE('TPL_ALGO_DEFVAL', 0);
 //
 DEFINE('DIR_INPUT', 'input/');
 //
+DEFINE('DIR_DB', 'db4ever/');
+DEFINE('DB_PASS', 'qser');
+DEFINE('DB_USER', 'qser');
 /**
  * 
  * @param type $mixed
@@ -20,7 +23,7 @@ DEFINE('DIR_INPUT', 'input/');
  * This function reflect variable value, file and line, where it was call. Variable can be scalar or not, and this 
  * function add <br> elements on both sides of echo, for better reading on html page.
  */
-function eee($var, $file, $line)
+function eee($var, $file = null, $line = null)
 {
     $file = str_replace("\\", "/", $file);
     echo "<br>" . 

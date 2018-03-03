@@ -13,5 +13,9 @@ require_once DIR_INPUT . 'InputMethod.php';
  */
 class WriteManualy extends InputMethod
 {
-    //put your code here
+    public function getData()
+    {
+        
+    }
+    
 }

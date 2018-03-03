@@ -19,4 +19,10 @@ class SelectManualy extends FromDb
 //        echo __FILE__;
 //        echo dirname(__FILE__);
     }
+    
+    public function getData()
+    {
+        
+    }
+    
 }

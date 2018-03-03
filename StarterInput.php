@@ -22,7 +22,8 @@ class StarterInput
     {
         $sett = $settIn;
         eee($sett, __FILE__, __LINE__);
-        $obj = new WriteManualy();
+        $obj = new ChooseRandomly();
+        $obj->getData();
     }
     
     

@@ -21,9 +21,8 @@ class FormatePlainText extends Settings
         $this->input = new StarterInput($this->getSettings(TPL_INPUT_NAME));
         $this->algo = new StarterInput($this->getSettings(TPL_ALGO_NAME));//will be StarterAlgorythm
         $this->output = new StarterInput($this->getSettings(TPL_OUTPUT_NAME));//will be StarterOutput
-        
 //        eee($sett, __FILE__, __LINE__);
-    } 
+    }
 }
 
 

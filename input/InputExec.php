@@ -10,6 +10,8 @@
  *
  * @author usfuprog
  */
-interface InputExec {
+interface InputExec 
+{
     //put your code here
+    public function getData();
 }

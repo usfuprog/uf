@@ -7,5 +7,10 @@ require_once DIR_INPUT . 'FromDb.php';
  */
 class ChooseRandomly extends FromDb
 {
-    //put your code here
+    public function getData()
+    {
+//        parent::__construct();
+        eee("chooran", __FILE__, __LINE__);
+    }
+    
 }
