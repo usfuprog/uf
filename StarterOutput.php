@@ -1,4 +1,7 @@
 <?php
+require_once 'Starter.php';
+require_once DIR_OUTPUT . 'Html.php';
+require_once DIR_OUTPUT . 'TextFile.php';
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -11,7 +14,18 @@
  * @author usfuprog
  */
 
-class StarterOutput
+class StarterOutput extends Starter 
 {
+    private $sett, $obj;
+    
+    public function __construct($settIn) 
+    {
+        if ($settIn === strval(TPL_OUTPUT_DEFVAL))return null;
+        $this->sett = $settIn;
+        
+        $this->obj = Starter::getObject($this->sett);
+        eee($this->obj, __FILE__, __LINE__);
+//        $this->obj->getData();
+    }
     
 }

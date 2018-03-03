@@ -10,6 +10,7 @@ DEFINE('TPL_ALGO_NAME', 'algo');
 DEFINE('TPL_ALGO_DEFVAL', 0);
 //
 DEFINE('DIR_INPUT', 'input/');
+DEFINE('DIR_OUTPUT', 'output/');
 //
 DEFINE('DIR_DB', 'db4ever/');
 DEFINE('DB_PASS', 'qser');
@@ -29,7 +30,9 @@ function eee($var, $file = null, $line = null)
     echo "<br>" . 
             str_pad(implode(preg_split("/^[\/|\w].*[\/{1}]/", $file, -1)), 100, ".", STR_PAD_LEFT) . 
             " : " . $line . " : " . str_pad($file, 75, "~", STR_PAD_LEFT) . "<br>[";//                   "/[/]+[\w|\.]*$/"
-        
+    if (is_bool($var) === true && $var)$var = "true";
+    if (is_bool($var) === true && !$var)$var = "false";
+    
     echo is_scalar($var) ? nl2br($var) : var_export($var, true);
 //    echo "________<br>";
 //    echo is_scalar($var) ? nl2br($var) : var_dump($var);

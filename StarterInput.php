@@ -1,4 +1,5 @@
 <?php
+require_once 'Starter.php';
 require_once DIR_INPUT . 'ChooseRandomly.php';
 require_once DIR_INPUT . 'SelectManualy.php';
 require_once DIR_INPUT . 'WriteManualy.php';
@@ -14,16 +15,19 @@ require_once DIR_INPUT . 'WriteManualy.php';
  * @author usfuprog
  */
 
-class StarterInput
+class StarterInput extends Starter 
 {
     private $sett, $obj;
     
     public function __construct($settIn) 
     {
-        $sett = $settIn;
-        eee($sett, __FILE__, __LINE__);
-        $obj = new ChooseRandomly();
-        $obj->getData();
+        if ($settIn === strval(TPL_INPUT_DEFVAL))return null;
+        $this->sett = $settIn;
+        
+        $this->obj = Starter::getObject($this->sett);
+        eee($this->obj, __FILE__, __LINE__);
+        
+//        $this->obj->getData();
     }
     
     

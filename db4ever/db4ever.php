@@ -17,19 +17,15 @@ class db4ever
     private $querys = [];
     
     /**
-     * 
+     * Create connection to a database if it is not set.
      */
     public function __construct()
     {
         try
         {
             if (static::$obj == null)
-            {
                 static::$obj = new PDO("mysql:host=localhost;dbname=engFra", DB_USER, DB_PASS);
-                eee("set");
-            }
-            else
-                eee("exist!!!");
+            
         } catch (PDOException $e)
         {
             throw new PDOException("connection FAIL !!!" . $e->getMessage());
@@ -38,12 +34,16 @@ class db4ever
         $this->querys[] = "SELECT * FROM fra";
     }
     
+    /**
+     * Take query from query array and send it to a database server.
+     * @param type $num
+     */
     public function query($num)
     {
         echo $this->querys[$num];
     }
     /**
-     * 
+     * Destroy connection to a database.
      */
     public function closeConnection()
     {

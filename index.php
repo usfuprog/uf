@@ -1,6 +1,7 @@
 <?php
 require_once 'Settings.php';
 require_once 'StarterInput.php';
+require_once 'StarterOutput.php';
 /**
  * Description of FormatPlainText
  * This class get settings from class which he is extends of, and create input, output and algorythm objects, with this 
@@ -19,14 +20,14 @@ class FormatePlainText extends Settings
             throw new Exception("Settings FAIL !!!");
 //        eee($sett, __FILE__, __LINE__);
         $this->input = new StarterInput($this->getSettings(TPL_INPUT_NAME));
-        $this->algo = new StarterInput($this->getSettings(TPL_ALGO_NAME));//will be StarterAlgorythm
-        $this->output = new StarterInput($this->getSettings(TPL_OUTPUT_NAME));//will be StarterOutput
+//        $this->algo = new StarterInput($this->getSettings(TPL_ALGO_NAME));//will be StarterAlgorythm
+        $this->output = new StarterOutput($this->getSettings(TPL_OUTPUT_NAME));//will be StarterOutput
 //        eee($sett, __FILE__, __LINE__);
     }
 }
 
 
-//error_reporting(E_ALL & ~E_WARNING);
+//error_reporting(E_ALL & ~E_NOTICE);
 try
 {
     $obj = new FormatePlainText(10);
@@ -56,9 +57,9 @@ Die();
                 <option>select manualy</option>
             </select>
             <select name="<?php echo TPL_ALGO_NAME ?>">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
+                <option>algo 1</option>
+                <option>algo 2</option>
+                <option>algo 3</option>
             </select>
             <select name="<?php echo TPL_OUTPUT_NAME ?>">
                 <option>html</option>

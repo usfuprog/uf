@@ -1,5 +1,6 @@
 <?php
-require_once DIR_OUTPUT . "OutputExec.php";
+require_once DIR_OUTPUT . "OutputMethod.php";
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -7,12 +8,11 @@ require_once DIR_OUTPUT . "OutputExec.php";
  */
 
 /**
- * Description of OutputMethod
+ * Description of Html
  *
  * @author usfuprog
  */
-
-abstract class OutputMethod implements OutputExec
+class Html extends OutputMethod 
 {
-    
+    //put your code here
 }
