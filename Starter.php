@@ -13,6 +13,13 @@
  */
 class Starter 
 {
+    /**
+     * Get settings from Starter*.php and return object, of require class, back.
+     * 
+     * @param type $settings
+     * @return \className
+     * @throws Exception
+     */
     protected static function getObject($settings)
     {
         $className = preg_replace_callback("/^[\w]{1}|[\s]{1}[\w]{1}/", 
@@ -24,4 +31,15 @@ class Starter
        
         return $obj;
     }
+    
+    /**
+     * Return raw settings, as they was entered on the page. Different settings for each Starter*.php.
+     * 
+     * @return type
+     */
+    public static function getSett()
+    {
+        return static::$sett;
+    }
+    
 }

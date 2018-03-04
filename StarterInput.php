@@ -17,18 +17,18 @@ require_once DIR_INPUT . 'WriteManualy.php';
 
 class StarterInput extends Starter 
 {
-    private $sett, $obj;
+    private $obj;
+    public static $sett;
     
     public function __construct($settIn) 
     {
         if ($settIn === strval(TPL_INPUT_DEFVAL))return null;
-        $this->sett = $settIn;
+        static::$sett = $settIn;
         
-        $this->obj = Starter::getObject($this->sett);
+        $this->obj = Starter::getObject(static::$sett);
         eee($this->obj, __FILE__, __LINE__);
         
-//        $this->obj->getData();
+        $this->obj->getData();
     }
-    
     
 }

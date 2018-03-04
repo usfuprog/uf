@@ -16,16 +16,17 @@ require_once DIR_OUTPUT . 'TextFile.php';
 
 class StarterOutput extends Starter 
 {
-    private $sett, $obj;
+    private $obj;
+    public static $sett;
     
     public function __construct($settIn) 
     {
         if ($settIn === strval(TPL_OUTPUT_DEFVAL))return null;
-        $this->sett = $settIn;
+        static::$sett = $settIn;
         
-        $this->obj = Starter::getObject($this->sett);
+        $this->obj = Starter::getObject(static::$sett);
         eee($this->obj, __FILE__, __LINE__);
-//        $this->obj->getData();
+        
     }
     
 }

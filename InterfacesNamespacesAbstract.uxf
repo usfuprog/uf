@@ -154,10 +154,9 @@ string getSettings(string)
     </coordinates>
     <panel_attributes>Class StarterInput extends Starter
 private:
-string sett;
 object obj;
 public:
-</panel_attributes>
+static string sett;</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -179,7 +178,11 @@ public:
       <w>240</w>
       <h>220</h>
     </coordinates>
-    <panel_attributes>Class StarterOutput extends Starter</panel_attributes>
+    <panel_attributes>Class StarterOutput extends Starter
+private:
+object obj;
+public:
+static string sett;</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -230,7 +233,9 @@ m2=provide
       <h>220</h>
     </coordinates>
     <panel_attributes>Class Starter
-protected function getObject(string settings)</panel_attributes>
+protected function getObject(string settings);
+public static function getSett();
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>

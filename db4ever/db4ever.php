@@ -48,7 +48,7 @@ class db4ever
     public function closeConnection()
     {
         static::$obj = null;
-        eee("unset");
+        eee("unset", __FILE__, __LINE__);
     }
         
 }
