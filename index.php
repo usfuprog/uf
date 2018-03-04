@@ -2,6 +2,7 @@
 require_once 'Settings.php';
 require_once 'StarterInput.php';
 require_once 'StarterOutput.php';
+require_once 'StarterAlgo.php';
 /**
  * Description of FormatPlainText
  * This class get settings from class which he is extends of, and create input, output and algorythm objects, with this 
@@ -20,7 +21,7 @@ class FormatePlainText extends Settings
             throw new Exception("Settings FAIL !!!");
 //        eee($sett, __FILE__, __LINE__);
         $this->input = new StarterInput($this->getSettings(TPL_INPUT_NAME));
-//        $this->algo = new StarterInput($this->getSettings(TPL_ALGO_NAME));
+        $this->algo = new StarterAlgo($this->getSettings(TPL_ALGO_NAME));
         $this->output = new StarterOutput($this->getSettings(TPL_OUTPUT_NAME));
 //        eee($sett, __FILE__, __LINE__);
         
@@ -60,9 +61,12 @@ Die();
                 echo (StarterInput::getSett() == $value ? " selected" : "") . ">" . $value; ?></option>
             </select>
             <select name="<?php echo TPL_ALGO_NAME ?>">
-                <option value="algo 1">algo 1</option>
-                <option value="algo 2">algo 2</option>
-                <option value="algo 3">algo 3</option>
+                <option <?php $value = "algo 1"; echo 'value="' . $value . '"'; 
+                echo (StarterAlgo::getSett() == $value ? " selected" : "") . ">" . $value; ?></option>
+                <option <?php $value = "algo 2"; echo 'value="' . $value . '"'; 
+                echo (StarterAlgo::getSett() == $value ? " selected" : "") . ">" . $value; ?></option>
+                <option <?php $value = "algo 3"; echo 'value="' . $value . '"'; 
+                echo (StarterAlgo::getSett() == $value ? " selected" : "") . ">" . $value; ?></option>
             </select>
             <select name="<?php echo TPL_OUTPUT_NAME ?>">
                 <option <?php $value = "html"; echo 'value="' . $value . '"'; 

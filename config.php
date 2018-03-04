@@ -11,6 +11,7 @@ DEFINE('TPL_ALGO_DEFVAL', 0);
 //
 DEFINE('DIR_INPUT', 'input/');
 DEFINE('DIR_OUTPUT', 'output/');
+DEFINE('DIR_ALGO', 'algo/');
 //
 DEFINE('DIR_DB', 'db4ever/');
 DEFINE('DB_PASS', 'qser');

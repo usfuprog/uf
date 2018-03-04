@@ -25,8 +25,8 @@ class Settings
     }
     /**
      * @param string
-     * String $sett contains settings for all classes. This function extract settings to the class, that 
-     * defined by variable class. Each class identify by constant from config.php. 
+     * String $sett contains settings for all classes. This function extract settings to the class, that is 
+     * defined by variable $class. Each class identify by constant from config.php. 
      * @return string
     */
     public function getSettings($class)
