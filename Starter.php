@@ -24,7 +24,9 @@ class Starter
     {
         $className = preg_replace_callback("/^[\w]{1}|[\s]{1}[\w]{1}/", 
                 function($match){return strtoupper(trim($match[0]));}, $settings);
-        $obj = new $className;
+        $obj = null;
+        if ($className)
+            $obj = new $className;
         
         if (!$obj)
             throw new Exception("settings FAIL. No object was created !!! Class: " . $settings);

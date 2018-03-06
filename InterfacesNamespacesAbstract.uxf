@@ -155,7 +155,7 @@ string getSettings(string)
     <panel_attributes>Class StarterInput extends Starter
 private:
 object obj;
-public:
+protected:
 static string sett;</panel_attributes>
     <additional_attributes/>
   </element>
@@ -181,7 +181,7 @@ static string sett;</panel_attributes>
     <panel_attributes>Class StarterOutput extends Starter
 private:
 object obj;
-public:
+protected:
 static string sett;</panel_attributes>
     <additional_attributes/>
   </element>

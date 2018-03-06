@@ -26,12 +26,16 @@ class Settings
     /**
      * @param string
      * String $sett contains settings for all classes. This function extract settings to the class, that is 
-     * defined by variable $class. Each class identify by constant from config.php. 
+     * defined by variable $class. Each class identify by constant from config.php. Also it can return raw 
+     * settings for all classes in string.
      * @return string
     */
-    public function getSettings($class)
+    public function getSettings($class = null)
     {
 //        eee($this->sett, __FILE__, __LINE__);
+        if (!$class)
+            return $this->sett;
+        
         $localSett = explode(";", $this->sett);
 //        eee($localSett, __FILE__, __LINE__);
         $localSett = preg_grep("/$class\s?=\s?[^;]+/", $localSett);

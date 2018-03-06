@@ -17,7 +17,7 @@ require_once DIR_OUTPUT . 'TextFile.php';
 class StarterOutput extends Starter 
 {
     private $obj;
-    public static $sett;
+    protected static $sett;
     
     public function __construct($settIn) 
     {

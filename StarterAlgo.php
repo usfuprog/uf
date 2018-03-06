@@ -18,7 +18,7 @@ require_once DIR_ALGO . 'Algo3.php';
 class StarterAlgo extends Starter 
 {
     private $obj;
-    public static $sett;
+    protected static $sett;
     
     public function __construct($settIn) 
     {

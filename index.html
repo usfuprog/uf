@@ -23,9 +23,6 @@ class FormatePlainText extends Settings
         $this->input = new StarterInput($this->getSettings(TPL_INPUT_NAME));
         $this->algo = new StarterAlgo($this->getSettings(TPL_ALGO_NAME));
         $this->output = new StarterOutput($this->getSettings(TPL_OUTPUT_NAME));
-        eee($this->output->getSett());
-//        eee(StarterOutput::getSett());
-//        eee($this->getSettings());
 //        eee($sett, __FILE__, __LINE__);
         
     }
@@ -52,25 +49,23 @@ Die();
 <!DOCTYPE html>
 <html>
     <head>
-        <script src="jq/jquery-3.3.1.js"></script>
-<!--        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="jq/jquery-ui.js"></script>
-        <link href="jq/jquery-ui.css" rel="stylesheet"> -->
-        <script src="jsHere.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        
         <script>
-            try
+            try 
             {
-                $(function()
-                {
-                    starter("<?php echo TPL_INPUT_NAME ?>", "<?php echo TPL_OUTPUT_NAME ?>", "<?php echo TPL_ALGO_NAME ?>");
-                }
-                );
+               if($){};
             }
             catch (err)
             {
-                alert("jQuery NOT FOUND. Library jQuery is REQUIRED for correct work of this site.");
+                alert("ERROR: jQuery is required to use this web site correctly");
             }
         </script>
+        <script src="jqscript.js"></script>
+        <script>
+            starter("<?php echo TPL_INPUT_NAME ?>", "<?php echo TPL_OUTPUT_NAME ?>", "<?php echo TPL_ALGO_NAME ?>");
+        </script>
+        
     </head>
     <body>
         <form method="POST" action="<?php echo filter_input(INPUT_SERVER, 'PHP_SELF') ?>"> 
@@ -96,11 +91,7 @@ Die();
                 echo (StarterOutput::getSett() == $value ? " selected" : "") . ">" . $value; ?></option>
             </select>
             <button type="submit">>> GO >></button>
-            <span name="countWords">
-                <div>Count of words:</div>
-                <input type="number" value="10" min="1" max="100"></input>
-                </div>
-            </span>
+            <span><div>Count of words:</div><input type="number" value="10" min="1" max="100"></input></div></span>
         </form>
         <?php //eee($obj, __FILE__, __LINE__) ?>
     </body>
