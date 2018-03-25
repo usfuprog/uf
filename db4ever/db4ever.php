@@ -31,7 +31,7 @@ class db4ever
             throw new PDOException("connection FAIL !!!" . $e->getMessage());
         }
         
-        $this->querys[] = "SELECT * FROM fra";
+        $this->querys[] = "SELECT * FROM fra ORDER BY RAND() LIMIT 10;";
     }
     
     /**

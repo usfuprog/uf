@@ -16,6 +16,8 @@ class FormatePlainText extends Settings
     
     public function __construct($num)
     {
+        if (!filter_input(INPUT_COOKIE, "txtFile"))
+        eee(\setcookie("txtFile", "db", time()+60));
         $sett = sprintf($this);
         if (!$sett)
             throw new Exception("Settings FAIL !!!");
@@ -23,9 +25,10 @@ class FormatePlainText extends Settings
         $this->input = new StarterInput($this->getSettings(TPL_INPUT_NAME));
         $this->algo = new StarterAlgo($this->getSettings(TPL_ALGO_NAME));
         $this->output = new StarterOutput($this->getSettings(TPL_OUTPUT_NAME));
-        eee($this->output->getSett());
+        eee($this->output->getSett(), __FILE__, __LINE__);
+        
 //        eee(StarterOutput::getSett());
-//        eee($this->getSettings());
+        eee($this->getSettings());
 //        eee($sett, __FILE__, __LINE__);
         
     }
@@ -47,8 +50,6 @@ eee($ex->getMessage(), $ex->getFile(), $ex->getLine());
 Die();
 }
 ?>
-
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -74,7 +75,6 @@ Die();
     </head>
     <body>
         <form method="POST" action="<?php echo filter_input(INPUT_SERVER, 'PHP_SELF') ?>"> 
-            
             <select name="<?php echo TPL_INPUT_NAME ?>">
                 <option <?php $value = "choose randomly"; echo 'value="' . $value . '"'; 
                 echo (StarterInput::getSett() == $value ? " selected" : "") . ">" . $value; ?></option>
@@ -95,12 +95,25 @@ Die();
                 <option <?php $value = "text file"; echo 'value="' . $value . '"'; 
                 echo (StarterOutput::getSett() == $value ? " selected" : "") . ">" . $value; ?></option>
             </select>
-            <button type="submit">>> GO >></button>
-            <span name="countWords">
-                <div>Count of words:</div>
-                <input type="number" value="10" min="1" max="100"></input>
-                </div>
+            
+            
+            <button type="submit"><?php echo htmlspecialchars(">> GO >>"); ?></button>
+            <span style="margin-left: 100px">
+                <label for="badTranslation">Incorrect words will be from: </label>
+                <input type="radio" name="badTranslation" checked="checked" value="db">db</input>
+                <input type="radio" name="badTranslation" value="select manualy">select manualy</input>
             </span>
+            <div name="countWords">
+                <div>&nbsp;</div>
+                <label for="countOfWords">Count of words:</label>
+                <input type="number" value="10" min="1" max="100" />
+            </div>
+            <div name="nameFile" style="margin: 0 auto; width: 50%">
+                <label for="nameFile">Text file name:</label>
+                <input type="text" name="txtFile" value=
+                    <?php echo isset($_COOKIE["txtFile"]) ? filter_input(INPUT_COOKIE, "txtFile") : ""; ?> 
+                       >
+            </div>
         </form>
         <?php //eee($obj, __FILE__, __LINE__) ?>
     </body>
