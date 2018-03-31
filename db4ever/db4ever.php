@@ -40,7 +40,7 @@ class db4ever
      */
     public function query($num)
     {
-        echo $this->querys[$num];
+        return $this->querys[$num];
     }
     /**
      * Destroy connection to a database.

@@ -74,6 +74,11 @@ Die();
         </script>
     </head>
     <body>
+        <div style="height: 100px;" name="wordsListWrapper">
+            <select name="wordsList" multiple="multiple" style="height: 100%">
+                
+            </select>
+        </div>
         <form method="POST" action="<?php echo filter_input(INPUT_SERVER, 'PHP_SELF') ?>"> 
             <select name="<?php echo TPL_INPUT_NAME ?>">
                 <option <?php $value = "choose randomly"; echo 'value="' . $value . '"'; 
@@ -98,7 +103,7 @@ Die();
             
             
             <button type="submit"><?php echo htmlspecialchars(">> GO >>"); ?></button>
-            <span style="margin-left: 100px">
+            <span style="margin-left: 100px" name="badTranslation">
                 <label for="badTranslation">Incorrect words will be from: </label>
                 <input type="radio" name="badTranslation" checked="checked" value="db">db</input>
                 <input type="radio" name="badTranslation" value="select manualy">select manualy</input>
