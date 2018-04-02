@@ -51,12 +51,12 @@ class Settings
     {
         $get = filter_input_array(INPUT_GET);
         $post = filter_input_array(INPUT_POST);
-        printf('%1$32b %2$32b <br>', $get, $post);
+//        printf('%1$32b %2$32b <br>', $get, $post);
         $tmp = $post ? $post : ($get ? $get : null);
         
         if (!$tmp)return;
         
-        eee($tmp, __FILE__, __LINE__);
+//        eee($tmp, __FILE__, __LINE__);
         foreach ($tmp as $k => $v)
         {
             $this->sett .= "$k = $v; ";

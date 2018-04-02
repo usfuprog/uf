@@ -31,7 +31,10 @@ class db4ever
             throw new PDOException("connection FAIL !!!" . $e->getMessage());
         }
         
-        $this->querys[] = "SELECT * FROM fra ORDER BY RAND() LIMIT 10;";
+        $this->querys[0] = "SELECT * FROM fra ORDER BY RAND() LIMIT 10;";
+        $this->querys[1] = 
+        "SELECT eng.word e, fra.word f FROM eng, fra, mt_eng_fra WHERE eng.id = mt_eng_fra.eng_id AND "
+                . "fra.id = mt_eng_fra.fra_id ORDER BY e";
     }
     
     /**
@@ -40,7 +43,12 @@ class db4ever
      */
     public function query($num)
     {
-        return $this->querys[$num];
+        if (!static::$obj)
+            return null;
+        
+        $res = static::$obj->query($this->querys[1]);
+        
+        return $res->fetchAll();
     }
     /**
      * Destroy connection to a database.

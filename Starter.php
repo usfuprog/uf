@@ -22,7 +22,7 @@ class Starter
      */
     protected static function getObject($settings)
     {
-        echo " __ " . $settings;
+//        echo " __ " . $settings;
         $className = preg_replace_callback("/^[\w]{1}|[\s]{1}[\w]{1}/", 
                 function($match){return strtoupper(trim($match[0]));}, $settings);
         $obj = null;

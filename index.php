@@ -16,21 +16,29 @@ class FormatePlainText extends Settings
     
     public function __construct($num)
     {
-        if (!filter_input(INPUT_COOKIE, "txtFile"))
-        eee(\setcookie("txtFile", "db", time()+60));
         $sett = sprintf($this);
         if (!$sett)
             throw new Exception("Settings FAIL !!!");
 //        eee($sett, __FILE__, __LINE__);
+        eee($this->getSettings("txtFile"), __FILE__, __LINE__);
+        
         $this->input = new StarterInput($this->getSettings(TPL_INPUT_NAME));
         $this->algo = new StarterAlgo($this->getSettings(TPL_ALGO_NAME));
         $this->output = new StarterOutput($this->getSettings(TPL_OUTPUT_NAME));
         eee($this->output->getSett(), __FILE__, __LINE__);
         
 //        eee(StarterOutput::getSett());
-        eee($this->getSettings());
+        eee($this->getSettings(), __FILE__, __LINE__);
 //        eee($sett, __FILE__, __LINE__);
         
+    }
+    
+    /*
+     * Return values of different parts of form, to write it on page again after form was send.
+     */
+    public function getFormSett($name)
+    {
+        return $this->getSettings($name);
     }
 }
 
@@ -40,8 +48,7 @@ try
 {
     $obj = new FormatePlainText(10);
     $val = 400;
-    echo sprintf('%1$s %2$d <br>', TPL_ALGO_NAME, $val);
-    
+//    echo sprintf('%1$s %2$d <br>', TPL_ALGO_NAME, $val);
     
     //echo $obj;
 } catch (Exception $ex) {
@@ -73,7 +80,7 @@ Die();
             }
         </script>
     </head>
-    <body>
+    <body style="margin-bottom: 256px">
         <div style="height: 100px;" name="wordsListWrapper">
             <select name="wordsList" multiple="multiple" style="height: 100%">
                 
@@ -106,18 +113,24 @@ Die();
             <span style="margin-left: 100px" name="badTranslation">
                 <label for="badTranslation">Incorrect words will be from: </label>
                 <input type="radio" name="badTranslation" checked="checked" value="db">db</input>
-                <input type="radio" name="badTranslation" value="select manualy">select manualy</input>
+                <input type="radio" name="badTranslation" value="select manualy">already selected words</input>
             </span>
             <div name="countWords">
                 <div>&nbsp;</div>
                 <label for="countOfWords">Count of words:</label>
                 <input type="number" value="10" min="1" max="100" />
             </div>
-            <div name="nameFile" style="margin: 0 auto; width: 50%">
-                <label for="nameFile">Text file name:</label>
-                <input type="text" name="txtFile" value=
-                    <?php echo isset($_COOKIE["txtFile"]) ? filter_input(INPUT_COOKIE, "txtFile") : ""; ?> 
-                       >
+            <div style="margin: 0 auto; width: 50%;" name="moreServicesProvide">
+                <div name="nameFile">
+                    <label for="nameFile">Text file name:</label>
+                    <input type="text" name="txtFile" value=
+                        <?php echo $obj->getFormSett("txtFile"); ?> 
+                           >
+                </div>
+                <div>&nbsp;</div>
+                <div name="choosedWords">
+                    <div>Already choosed:</div>
+                </div>
             </div>
         </form>
         <?php //eee($obj, __FILE__, __LINE__) ?>

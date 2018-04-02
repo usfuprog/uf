@@ -20,7 +20,7 @@ function eee
       <x>810</x>
       <y>430</y>
       <w>290</w>
-      <h>190</h>
+      <h>270</h>
     </coordinates>
     <panel_attributes>index.php
 
@@ -31,7 +31,8 @@ sett = new Settings;
 inpt = new StarterInput(sett);
 algo = new StarterAlgorythm(sett);
 outp = new StarterOutput(sett);
-</panel_attributes>
+public:
+getFormSett(string);</panel_attributes>
     <additional_attributes/>
   </element>
   <element>

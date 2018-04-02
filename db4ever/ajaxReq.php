@@ -9,6 +9,13 @@ require_once 'db4ever.php';
 
 
 $obj = new db4ever;
-$data = [$_SERVER['DOCUMENT_ROOT'] . '/config.php'=>$obj->query(0)];
+$data = $obj->query(1);
+$res = array();
+foreach ($data as $k => $v)
+{
+    $res[] = $v['e'] . ' - ' . $v['f'];
+    
+//    break;
+}
 
-echo json_encode($data);
+echo json_encode($res);
