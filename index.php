@@ -113,12 +113,12 @@ Die();
             <span style="margin-left: 100px" name="badTranslation">
                 <label for="badTranslation">Incorrect words will be from: </label>
                 <input type="radio" name="badTranslation" checked="checked" value="db">db</input>
-                <input type="radio" name="badTranslation" value="select manualy">already selected words</input>
+                <input type="radio" name="badTranslation" value="already exist">already selected words</input>
             </span>
             <div name="countWords">
                 <div>&nbsp;</div>
                 <label for="countOfWords">Count of words:</label>
-                <input type="number" value="10" min="1" max="100" />
+                <input type="number" value="10" min="1" max="100" name="wordsCnt" />
             </div>
             <div style="margin: 0 auto; width: 50%;" name="moreServicesProvide">
                 <div name="nameFile">

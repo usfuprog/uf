@@ -27,6 +27,7 @@ DEFINE('DB_USER', 'qser');
  */
 function eee($var, $file = null, $line = null)
 {
+//    return;
     $file = str_replace("\\", "/", $file);
     echo "<br>" . 
             str_pad(implode(preg_split("/^[\/|\w].*[\/{1}]/", $file, -1)), 100, ".", STR_PAD_LEFT) . 
