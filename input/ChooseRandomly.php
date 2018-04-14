@@ -11,6 +11,7 @@ class ChooseRandomly extends FromDb
     {
 //        parent::__construct();
         eee("chooran", __FILE__, __LINE__);
+        eee(static::$wrapObj->getFormSett("wordsCnt"), __FILE__, __LINE__);
     }
     
 }

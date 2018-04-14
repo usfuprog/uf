@@ -14,5 +14,5 @@ require_once DIR_OUTPUT . "OutputMethod.php";
  */
 class TextFile extends OutputMethod 
 {
-    //put your code here
+    
 }

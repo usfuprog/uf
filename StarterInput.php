@@ -10,7 +10,7 @@ require_once DIR_INPUT . 'WriteManualy.php';
  */
 
 /**
- * Description of SelectManualy
+ * Description of StarterInput
  *
  * @author usfuprog
  */
@@ -20,12 +20,13 @@ class StarterInput extends Starter
     private $obj;
     protected static $sett;
     
-    public function __construct($settIn) 
+    public function __construct($settIn, $wrapperObj) 
     {
         if ($settIn === strval(TPL_INPUT_DEFVAL))return null;
         static::$sett = $settIn;
         
-        $this->obj = Starter::getObject(static::$sett);
+        $this->obj = Starter::getObject(static::$sett, $wrapperObj, __CLASS__);
+//        eee(get_class_methods("InputMethod"));
         eee($this->obj, __FILE__, __LINE__);
         
         $this->obj->getData();

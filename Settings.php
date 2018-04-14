@@ -8,7 +8,7 @@ require_once 'config.php';
  * settings in POST or GET method, class will return default settings, using constants from config.php
  * @author usfuprog
  */
-class Settings 
+class Settings extends stdClass
 {
     private $sett = "";
     

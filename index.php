@@ -22,11 +22,12 @@ class FormatePlainText extends Settings
 //        eee($sett, __FILE__, __LINE__);
         eee($this->getSettings("txtFile"), __FILE__, __LINE__);
         
-        $this->input = new StarterInput($this->getSettings(TPL_INPUT_NAME));
-        $this->algo = new StarterAlgo($this->getSettings(TPL_ALGO_NAME));
-        $this->output = new StarterOutput($this->getSettings(TPL_OUTPUT_NAME));
+        $this->input = new StarterInput($this->getSettings(TPL_INPUT_NAME), $this);
+        $this->algo = new StarterAlgo($this->getSettings(TPL_ALGO_NAME), $this);
+        $this->output = new StarterOutput($this->getSettings(TPL_OUTPUT_NAME), $this);
+//        Starter::setFptObj($this);
         eee($this->output->getSett(), __FILE__, __LINE__);
-        
+        eee($this->getSettings('wordsCnt'), __FILE__, __LINE__);
 //        eee(StarterOutput::getSett());
         eee($this->getSettings(), __FILE__, __LINE__);
 //        eee($sett, __FILE__, __LINE__);

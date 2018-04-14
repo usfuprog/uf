@@ -13,14 +13,19 @@
  */
 class Starter 
 {
+    static protected $fpt;
     /**
      * Get settings from Starter*.php and return object, of require class, back.
+     * Get stdClass object, wich is wrapperObject, in this program this is FormatePlainText, and set static 
+     * property of abstract class, more closest to interface in folder, the root of other classes in each 
+     * folder. This allow get settings of the form, by public method getFormSett in any class, thats extends 
+     * in folders, such as "input", "output", "algo". 
+     * @param string $settings, stdClass, $className
      * 
-     * @param type $settings
      * @return \className
      * @throws Exception
      */
-    protected static function getObject($settings)
+    public static function getObject($settings, stdClass $wrapperObj = null, $callFrom = null)
     {
 //        echo " __ " . $settings;
         $className = preg_replace_callback("/^[\w]{1}|[\s]{1}[\w]{1}/", 
@@ -31,18 +36,22 @@ class Starter
         
         if (!$obj)
             throw new Exception("settings FAIL. No object was created !!! Class: " . $settings);
-       
+
+        $name = preg_replace("/Starter/", "", $callFrom, 1) . "Method";
+        
+        if ($name !== "Method" && is_a($obj, $name))
+            $obj->setWrapObj($wrapperObj);
+        
         return $obj;
     }
     
     /**
      * Return raw settings, as they was entered on the page. Different settings for each Starter*.php.
      * 
-     * @return type
+     * @return string
      */
     public static function getSett()
     {
         return static::$sett;
     }
-    
 }

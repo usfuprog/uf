@@ -10,6 +10,8 @@
  *
  * @author usfuprog
  */
-interface OutputExec {
+interface OutputExec 
+{
     //put your code here
+    static public function setWrapObj(\stdClass $obj);
 }

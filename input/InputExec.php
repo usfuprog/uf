@@ -14,4 +14,5 @@ interface InputExec
 {
     //put your code here
     public function getData();
+    static public function setWrapObj(\stdClass $obj);
 }

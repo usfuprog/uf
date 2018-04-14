@@ -28,9 +28,12 @@ Class formatPlainText extentds Settings
 
 private:
 sett = new Settings;
-inpt = new StarterInput(sett);
-algo = new StarterAlgorythm(sett);
-outp = new StarterOutput(sett);
+inpt = 
+new StarterInput(sett, FormatePlainText);
+algo = 
+new StarterAlgorythm(sett, FormatePlainText);
+outp = 
+new StarterOutput(sett, FormatePlainText);
 public:
 getFormSett(string);</panel_attributes>
     <additional_attributes/>
@@ -51,12 +54,12 @@ m1=require
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>860</x>
+      <x>820</x>
       <y>160</y>
-      <w>190</w>
+      <w>280</w>
       <h>180</h>
     </coordinates>
-    <panel_attributes>Class Settings
+    <panel_attributes>Class Settings extends stdClass
 private:
 string sett;
 defaultSettings()
@@ -117,33 +120,33 @@ string getSettings(string)
     <coordinates>
       <x>680</x>
       <y>290</y>
-      <w>200</w>
-      <h>270</h>
+      <w>160</w>
+      <h>290</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;180.0;250.0</additional_attributes>
+    <additional_attributes>10.0;10.0;140.0;270.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>330</x>
       <y>350</y>
-      <w>530</w>
-      <h>230</h>
+      <w>490</w>
+      <h>260</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;90.0;140.0;510.0;210.0</additional_attributes>
+    <additional_attributes>10.0;10.0;90.0;140.0;470.0;240.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>760</x>
-      <y>570</y>
-      <w>110</w>
-      <h>250</h>
+      <y>620</y>
+      <w>80</w>
+      <h>200</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;230.0;90.0;10.0</additional_attributes>
+    <additional_attributes>10.0;180.0;60.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -154,6 +157,7 @@ string getSettings(string)
       <h>260</h>
     </coordinates>
     <panel_attributes>Class StarterInput extends Starter
+__construct($settIn, $wrapperObj);
 private:
 object obj;
 protected:
@@ -180,6 +184,7 @@ static string sett;</panel_attributes>
       <h>220</h>
     </coordinates>
     <panel_attributes>Class StarterOutput extends Starter
+__construct($settIn, $wrapperObj);
 private:
 object obj;
 protected:
@@ -228,13 +233,15 @@ m2=provide
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>40</x>
+      <x>10</x>
       <y>670</y>
-      <w>300</w>
+      <w>350</w>
       <h>220</h>
     </coordinates>
     <panel_attributes>Class Starter
-protected function getObject(string settings);
+protected function 
+getObject
+(string settings, stdClass, string className);
 public static function getSett();
 </panel_attributes>
     <additional_attributes/>
@@ -266,13 +273,13 @@ public static function getSett();
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>330</x>
+      <x>350</x>
       <y>760</y>
-      <w>220</w>
+      <w>200</w>
       <h>40</h>
     </coordinates>
     <panel_attributes>lt=.&gt;
 &lt;&lt;extends&gt;&gt;</panel_attributes>
-    <additional_attributes>10.0;20.0;200.0;20.0</additional_attributes>
+    <additional_attributes>10.0;20.0;180.0;20.0</additional_attributes>
   </element>
 </diagram>

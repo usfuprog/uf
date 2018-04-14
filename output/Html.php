@@ -14,5 +14,5 @@ require_once DIR_OUTPUT . "OutputMethod.php";
  */
 class Html extends OutputMethod 
 {
-    //put your code here
+    
 }

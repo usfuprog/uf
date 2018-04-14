@@ -10,7 +10,10 @@
       <h>100</h>
     </coordinates>
     <panel_attributes>/AbstractClass/
-InputMethod implements InputExec</panel_attributes>
+InputMethod implements InputExec
+protected static $wrapObj;
+static public function setWrapObj(\stdClass $obj);
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -116,8 +119,8 @@ ChooseRandomly</panel_attributes>
     </coordinates>
     <panel_attributes>Interface InputExec
 --
-Operation1
-Operation2</panel_attributes>
+getData
+setWrapObj</panel_attributes>
     <additional_attributes/>
   </element>
   <element>

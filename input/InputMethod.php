@@ -14,5 +14,11 @@ require_once 'InputExec.php';
 
 abstract class InputMethod implements InputExec
 {
+    protected static $wrapObj;
     
+    static public function setWrapObj(\stdClass $obj) 
+    {
+        static::$wrapObj = $obj;
+        eee("HURA INPUT");
+    }
 }
