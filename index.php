@@ -29,7 +29,7 @@ class FormatePlainText extends Settings
         eee($this->output->getSett(), __FILE__, __LINE__);
         eee($this->getSettings('wordsCnt'), __FILE__, __LINE__);
 //        eee(StarterOutput::getSett());
-        eee($this->getSettings(), __FILE__, __LINE__);
+        eee($this->getSettings('badTranslation'), __FILE__, __LINE__);
 //        eee($sett, __FILE__, __LINE__);
         
     }
@@ -52,7 +52,7 @@ try
 //    echo sprintf('%1$s %2$d <br>', TPL_ALGO_NAME, $val);
     
     //echo $obj;
-} catch (Exception $ex) {
+} catch (\Exception $ex) {
 
 eee($ex->getMessage(), $ex->getFile(), $ex->getLine());
 Die();
@@ -113,8 +113,13 @@ Die();
             <button type="submit"><?php echo htmlspecialchars(">> GO >>"); ?></button>
             <span style="margin-left: 100px" name="badTranslation">
                 <label for="badTranslation">Incorrect words will be from: </label>
-                <input type="radio" name="badTranslation" checked="checked" value="db">db</input>
-                <input type="radio" name="badTranslation" value="already exist">already selected words</input>
+                <input type="radio" name="badTranslation" <?php 
+                        echo $obj->getFormSett("badTranslation") == "db" || $obj->getFormSett("badTranslation") == ""
+                                ? "checked='checked'" : ""; ?>
+                        value="db">db</input>
+                <input type="radio" name="badTranslation" <?php 
+                        echo $obj->getFormSett("badTranslation") == "already exist" ? "checked='checked'" : ""; ?>
+                       value="already exist">already selected words</input>
             </span>
             <div name="countWords">
                 <div>&nbsp;</div>

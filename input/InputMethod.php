@@ -19,6 +19,6 @@ abstract class InputMethod implements InputExec
     static public function setWrapObj(\stdClass $obj) 
     {
         static::$wrapObj = $obj;
-        eee("HURA INPUT");
+        eee("HURA INPUT", __FILE__, __LINE__);
     }
 }

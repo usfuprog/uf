@@ -48,7 +48,10 @@ WriteManualy</panel_attributes>
       <h>120</h>
     </coordinates>
     <panel_attributes>/AbstractClass/
-FromDb</panel_attributes>
+FromDb 
+public:
+__construct()
+static $db;</panel_attributes>
     <additional_attributes/>
   </element>
   <element>

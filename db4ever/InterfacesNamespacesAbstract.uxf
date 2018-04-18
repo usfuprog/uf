@@ -12,13 +12,15 @@
     <panel_attributes>Class db4ever
 private:
 static resource $obj = class PDO;
-$querys = array();
+$querys[];
+function func1();
+function func2();
 
 public:
 __construct();
-function closeConnection();
 function query(int);
-</panel_attributes>
+function getConnectionObject();
+function closeConnection();</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>
