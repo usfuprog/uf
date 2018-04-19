@@ -15,7 +15,9 @@ class ChooseRandomly extends FromDb
         $countWords = static::$wrapObj->getFormSett("wordsCnt");
         $wrondTranslate = static::$wrapObj->getFormSett("badTranslation");
         eee($countWords . " ___ " . $wrondTranslate . " ___ ", __FILE__, __LINE__);
-        $res = self::$db->query(2, $countWords, $wrondTranslate);
+        $res = self::$db->query(2, $countWords, "fra");
+        eee($res, __FILE__, __LINE__);
+        $res = self::$db->query(3, 10);
         eee($res, __FILE__, __LINE__);
     }
     

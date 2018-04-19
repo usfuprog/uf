@@ -32,11 +32,11 @@ class db4ever
         }
         
         $this->querys[] = "";
-        $this->querys[] = //func1
+        $this->querys[] = //func1, func3
         "SELECT eng.word e, fra.word f FROM eng, fra, mt_eng_fra WHERE eng.id = mt_eng_fra.eng_id AND "
                 . "fra.id = mt_eng_fra.fra_id ORDER BY e";
         $this->querys[] = //func2
-                "SELECT word FROM fra ORDER BY RAND() LIMIT :limit";
+                "SELECT word FROM :tbl ORDER BY RAND() LIMIT :limit";
 //                "SELECT * FROM fra WHERE id = ?";
 //SELECT eng.word, fra.word FROM eng, fra, mt_eng_fra WHERE eng.id = mt_eng_fra.eng_id AND 
 //fra.id = mt_eng_fra.fra_id ORDER BY RAND() LIMIT 10;
@@ -81,34 +81,53 @@ class db4ever
     }
     
     /**
-     * 
+     * 0 - func num, 1 - countWords, 2 - table
+     * after first shift
+     * 0 - countWords, 1 - table
      */
     private function func2($arr)
     {
         eee($arr, __FILE__, __LINE__);
         $quest = $this->querys[array_shift($arr)];
         eee($quest);
-        array_pop($arr);
+//        array_pop($arr);
         eee($arr);
         
 //        $stm = self::$obj->prepare($quest);
-        $limit = array_pop($arr);
-        eee($limit);
+        
+        $limit = filter_var(array_shift($arr), FILTER_VALIDATE_INT, array('options'=>array('min_range'=>1, 'max_range'=>100)));
+        $table = filter_var(array_shift($arr), FILTER_SANITIZE_SPECIAL_CHARS);
+        if (!$limit OR !$table)
+            throw new Exception("Incorrect input: " . $limit . "___" . $table . " ___ " . $quest);
+        eee($table);
 //        eee($stm->bindParam(':limit', $tmp, PDO::PARAM_INT));
 //        eee($tmp);
 //        $ok = $stm->execute();
-        $quest = str_replace(":limit", strval($limit), $quest);
+        $quest = str_replace(":limit", intval($limit), $quest);
+        $quest = str_replace(":tbl", strval($table), $quest);
+//        eee($quest);
+        $ok = self::$obj->query($quest);
+        if (!$ok)
+            throw new Exception(implode("", self::$obj->errorInfo()) . "___" . $quest);
+        
+//        return $stm->fetchAll();
+        return $ok->fetchAll(PDO::FETCH_NUM);
+    }
+    
+    /**
+     * 
+     */
+    public function func3($arr)
+    {
+        eee(array_shift($arr), __FILE__, __LINE__);
+        $limit = filter_var(array_shift($arr), FILTER_VALIDATE_INT, array('options'=>array('min_range'=>1, 'max_range'=>100)));
+        $quest = $this->querys[1] . " LIMIT $limit";
         eee($quest);
         $ok = self::$obj->query($quest);
         if (!$ok)
-            throw new Exception(implode("", $stm->errorInfo()) . "___" . $quest);
-        
-//        return $stm->fetchAll();
-        return $ok->fetchAll();
+            throw new Exception(implode("", self::$obj->errorInfo()) . "___" . $quest);
+        eee($ok->fetchAll(PDO::FETCH_NUM));
     }
-    
-    
-    
     
     /**
      * Destroy connection to a database.
