@@ -42,16 +42,20 @@ WriteManualy</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>200</x>
-      <y>450</y>
+      <x>160</x>
+      <y>430</y>
       <w>300</w>
-      <h>120</h>
+      <h>160</h>
     </coordinates>
     <panel_attributes>/AbstractClass/
 FromDb 
 public:
 __construct()
-static $db;</panel_attributes>
+static $db;
+protected:
+mergeInOneArr(array, array);
+finalRotate(array);
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -64,6 +68,10 @@ static $db;</panel_attributes>
     </coordinates>
     <panel_attributes>Class
 SelectManualy
+
+public: 
+function getData(StarterInput)
+
 </panel_attributes>
     <additional_attributes/>
   </element>
@@ -76,53 +84,57 @@ SelectManualy
       <h>160</h>
     </coordinates>
     <panel_attributes>Class
-ChooseRandomly</panel_attributes>
+ChooseRandomly
+
+public: 
+function getData(StarterInput)
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>170</x>
-      <y>560</y>
-      <w>120</w>
-      <h>140</h>
+      <y>580</y>
+      <w>80</w>
+      <h>120</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>10.0;120.0;100.0;10.0</additional_attributes>
+    <additional_attributes>10.0;100.0;60.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>360</x>
+      <x>320</x>
       <y>360</y>
-      <w>210</w>
+      <w>250</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;70.0;230.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>350</x>
+      <y>580</y>
+      <w>180</w>
       <h>110</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>10.0;90.0;190.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>390</x>
-      <y>560</y>
-      <w>140</w>
-      <h>130</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>120.0;110.0;10.0;10.0</additional_attributes>
+    <additional_attributes>160.0;90.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLInterface</id>
     <coordinates>
-      <x>510</x>
+      <x>500</x>
       <y>60</y>
-      <w>140</w>
+      <w>160</w>
       <h>100</h>
     </coordinates>
     <panel_attributes>Interface InputExec
 --
-getData
+getData(StarterInput)
 setWrapObj</panel_attributes>
     <additional_attributes/>
   </element>

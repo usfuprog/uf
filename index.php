@@ -12,7 +12,7 @@ require_once 'StarterAlgo.php';
 */
 class FormatePlainText extends Settings
 {
-    private $inpt, $algo, $output;
+//    public $input, $algo, $output;
     
     public function __construct($num)
     {
@@ -138,6 +138,7 @@ Die();
                     <div>Already choosed:</div>
                 </div>
             </div>
+            <p><?php echo var_dump($obj->input->all); ?></p>
         </form>
         <?php //eee($obj, __FILE__, __LINE__) ?>
     </body>

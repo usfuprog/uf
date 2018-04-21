@@ -36,7 +36,7 @@ class Starter
         
         if (!$obj)
             throw new Exception("settings FAIL. No object was created !!! Class: " . $settings);
-
+        
         $name = preg_replace("/Starter/", "", $callFrom, 1) . "Method";
         
         if ($name !== "Method" && is_a($obj, $name))

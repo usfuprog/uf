@@ -19,6 +19,9 @@ class StarterInput extends Starter
 {
     private $obj;
     protected static $sett;
+    public $defaultEngFraWords;
+    public $badTranslation;
+    public $all;
     
     public function __construct($settIn, $wrapperObj) 
     {
@@ -29,7 +32,7 @@ class StarterInput extends Starter
 //        eee(get_class_methods("InputMethod"));
         eee($this->obj, __FILE__, __LINE__);
         
-        $this->obj->getData();
+        $this->obj->getData($this);
     }
     
 }

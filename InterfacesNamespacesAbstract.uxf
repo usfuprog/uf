@@ -17,9 +17,9 @@ function eee
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>810</x>
-      <y>430</y>
-      <w>290</w>
+      <x>870</x>
+      <y>450</y>
+      <w>300</w>
       <h>270</h>
     </coordinates>
     <panel_attributes>index.php
@@ -28,13 +28,14 @@ Class formatPlainText extentds Settings
 
 private:
 sett = new Settings;
+public:
 inpt = 
 new StarterInput(sett, FormatePlainText);
 algo = 
 new StarterAlgorythm(sett, FormatePlainText);
 outp = 
 new StarterOutput(sett, FormatePlainText);
-public:
+
 getFormSett(string);</panel_attributes>
     <additional_attributes/>
   </element>
@@ -74,13 +75,13 @@ string getSettings(string)
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>940</x>
+      <x>1010</x>
       <y>330</y>
       <w>30</w>
-      <h>120</h>
+      <h>140</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>10.0;100.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;120.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -120,33 +121,33 @@ string getSettings(string)
     <coordinates>
       <x>680</x>
       <y>290</y>
-      <w>160</w>
-      <h>290</h>
+      <w>210</w>
+      <h>320</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;140.0;270.0</additional_attributes>
+    <additional_attributes>10.0;10.0;190.0;300.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>330</x>
       <y>350</y>
-      <w>490</w>
-      <h>260</h>
+      <w>560</w>
+      <h>290</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;90.0;140.0;470.0;240.0</additional_attributes>
+    <additional_attributes>10.0;10.0;90.0;140.0;540.0;270.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>760</x>
-      <y>620</y>
-      <w>80</w>
-      <h>200</h>
+      <y>650</y>
+      <w>130</w>
+      <h>170</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;180.0;60.0;10.0</additional_attributes>
+    <additional_attributes>10.0;150.0;110.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -161,7 +162,12 @@ __construct($settIn, $wrapperObj);
 private:
 object obj;
 protected:
-static string sett;</panel_attributes>
+static string sett;
+public:
+$defaultEngFraWords;
+$badTranslation;
+$all;
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
