@@ -105,6 +105,7 @@ function checkAjax(elem)
     $.post("db4ever/ajaxReq.php", {}, function(data)
     {
         var tmp;
+        
         for (tmp in data)
         {
             $("<option id=" + (tmp * 1 + 1) + ">" + data[tmp] + "</option>").appendTo(appTo);

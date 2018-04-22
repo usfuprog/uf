@@ -80,7 +80,8 @@ class db4ever
      */
     private function func1($arr)
     {
-        $res = static::$obj->query($this->querys[$arr[0]]);
+        $res = static::$obj->query($this->querys[1]);
+//        error_log(count($res), 3, __FILE__ . ".txt");
         return $res->fetchAll();
     }
     
@@ -90,11 +91,11 @@ class db4ever
      */
     private function func2($arr)
     {
-        eee($arr, __FILE__, __LINE__);
+//        eee($arr, __FILE__, __LINE__);
         $quest = $this->querys[2];
-        eee($quest);
+//        eee($quest);
 //        array_pop($arr);
-        eee($arr);
+//        eee($arr);
         
 //        $stm = self::$obj->prepare($quest);
         
@@ -102,7 +103,7 @@ class db4ever
         $table = filter_var(array_shift($arr), FILTER_SANITIZE_SPECIAL_CHARS);
         if (!$limit OR !$table)
             throw new Exception("Incorrect input: " . $limit . "___" . $table . " ___ " . $quest);
-        eee($table);
+//        eee($table);
 //        eee($stm->bindParam(':limit', $tmp, PDO::PARAM_INT));
 //        eee($tmp);
 //        $ok = $stm->execute();
@@ -126,13 +127,13 @@ class db4ever
         $limit = filter_var(array_shift($arr), FILTER_VALIDATE_INT, array('options'=>array('min_range'=>1, 'max_range'=>100)));
         $quest = $this->querys[1] . " LIMIT $limit";
         $quest = str_replace("ORDER BY e", "ORDER BY RAND()", $quest);
-        eee($quest);
+//        eee($quest);
         $ok = self::$obj->query($quest);
         if (!$ok)
             throw new Exception(implode("", self::$obj->errorInfo()) . "___" . $quest);
         
         $engFraWords = $ok->fetchAll(PDO::FETCH_NAMED);
-        eee($engFraWords, __FILE__, __LINE__);
+//        eee($engFraWords, __FILE__, __LINE__);
 //        $notIn = $this->query(4, $limit, $engFraWords);
 //        return $stm->fetchAll(PDO::FETCH_NUM);
 //        eee($notIn, __FILE__, __LINE__);
@@ -153,7 +154,7 @@ class db4ever
         {
             $notIn[] = $word['f'];
         }
-        eee($notIn, __FILE__, __LINE__);
+//        eee($notIn, __FILE__, __LINE__);
         $quest2 = str_pad("", count($notIn), "?");
 //        eee($quest2);
         $quest2 = preg_replace("/[\?]{1}/", "?, ", $quest2, strlen($quest2) - 1);//quest2 last
@@ -163,7 +164,7 @@ class db4ever
         $quest3 = str_replace(":notIn", $quest2, $quest3);
 //        eee($quest3);
         $quest3 = str_replace(":limit", strval($limit), $quest3);//quest3 last
-        eee($quest3);
+//        eee($quest3);
         $stm = self::$obj->prepare($quest3);
         $ok = $stm->execute($notIn);
         if (!$ok)

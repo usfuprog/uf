@@ -23,46 +23,4 @@ abstract class FromDb extends InputMethod
 //        eee(get_class(self::$db), __FILE__, __LINE__);
     }
     
-    /**
-     * 
-     * @param array $arr1
-     * @param array $arr2
-     */
-    protected function mergeInOneArr(array $arr1, array $arr2)
-    {
-        eee(array_merge($arr1, $arr2), __FILE__, __LINE__);
-        array_walk($arr1, 
-                function(&$v, $k) use($arr2)
-                    {
-                        $v['fake'] = array_shift($arr2[$k]);
-                    }
-                );
-        eee($arr1, __FILE__, __LINE__);
-        eee($arr2, __FILE__, __LINE__);
-        return $arr1;
-    }
-    
-    /**
-     * 
-     * @param array $arr
-     */
-    protected function finalRotate(array $arr)
-    {
-        $res = [];
-        
-        foreach ($arr as $k => $v)
-        {
-            $eng = array_shift($v);
-            $rand = mt_rand(111, 222);
-            $word1 = ($rand % 2 == 0) ? array_shift($v) : array_pop($v);
-            $word2 = array_shift($v);
-            $elem = array($eng, $word1, $word2);
-            $res[$k] = $elem;
-
-            eee($res[$k], __FILE__, __LINE__);
-        }
-        
-        return $res;
-    }
 }
-

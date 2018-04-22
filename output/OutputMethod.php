@@ -19,6 +19,6 @@ abstract class OutputMethod implements OutputExec
     static public function setWrapObj(\stdClass $obj) 
     {
         static::$wrapObj = $obj;
-        eee("HURA OUTPUT", __FILE__, __LINE__);
+//        eee("HURA OUTPUT", __FILE__, __LINE__);
     }
 }

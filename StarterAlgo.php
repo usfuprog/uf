@@ -26,7 +26,7 @@ class StarterAlgo extends Starter
         static::$sett = $settIn;
         
         $this->obj = Starter::getObject(static::$sett);
-        eee($this->obj, __FILE__, __LINE__);
+//        eee($this->obj, __FILE__, __LINE__);
         
 //        $this->obj->getData();
     }

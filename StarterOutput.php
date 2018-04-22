@@ -27,7 +27,7 @@ class StarterOutput extends Starter
         $this->obj = Starter::getObject(static::$sett, $wrapperObj, __CLASS__);
         
 //        eee(get_class_methods("InputMethod"));
-        eee($this->obj, __FILE__, __LINE__);
+//        eee($this->obj, __FILE__, __LINE__);
         
 //        $this->obj->getData();
     }
