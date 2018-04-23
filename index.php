@@ -133,12 +133,40 @@ Die();
                         <?php echo $obj->getFormSett("txtFile"); ?> 
                            >
                 </div>
-                <div>&nbsp;</div>
+                <br>
                 <div name="choosedWords">
                     <div>Already choosed:</div>
                 </div>
             </div>
-            <p><?php echo var_dump($obj->input->all); ?></p>
+            <p id="resultData">
+                <?php 
+//                    var_dump($obj->input->all); 
+                    
+                    if (isset($obj->input->defaultEngFraWords))
+                    {
+                        echo "<p>Le défaut valeurs ... </p><p>";
+                        foreach ($obj->input->defaultEngFraWords as $v)
+                        {
+                            $wordPair = $v;
+                            echo $wordPair['e'] . " - " . $wordPair['f'] . " ... ";
+                        }
+                        echo "</p>";
+                    }
+                    
+                    if (isset($obj->input->all))
+                    {
+                        echo "<p>Le choix, monsieur Anderson ... </p><p>";
+                        foreach ($obj->input->all as $v)
+                        {
+                            echo "<ul>";
+                            $wordPair = $v;
+                            echo "<li>" . $wordPair[0] . " (...) " . $wordPair[1] . " ou " . $wordPair[2] . " ... </li>";
+                            echo "</ul>";
+                        }
+                        echo "</p>";
+                    }
+                ?>
+            </p>
         </form>
         <?php //eee($obj, __FILE__, __LINE__) ?>
     </body>
