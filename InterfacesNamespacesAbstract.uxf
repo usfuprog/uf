@@ -163,10 +163,6 @@ private:
 object obj;
 protected:
 static string sett;
-public:
-$defaultEngFraWords;
-$badTranslation;
-$all;
 </panel_attributes>
     <additional_attributes/>
   </element>
@@ -178,7 +174,13 @@ $all;
       <w>230</w>
       <h>220</h>
     </coordinates>
-    <panel_attributes>Class StarterAlgo extends Starter</panel_attributes>
+    <panel_attributes>Class StarterAlgo extends Starter
+private $obj;
+protected $sett;
+public:
+__construct($settIn, $wrapper)
+getAlgoObject();
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -247,7 +249,7 @@ m2=provide
     <panel_attributes>Class Starter
 protected function 
 getObject
-(string settings, stdClass, string className);
+(string settings);
 public static function getSett();
 </panel_attributes>
     <additional_attributes/>

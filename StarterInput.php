@@ -19,20 +19,17 @@ class StarterInput extends Starter
 {
     private $obj;
     protected static $sett;
-    public $defaultEngFraWords;
-    public $badTranslation;
-    public $all;
     
-    public function __construct($settIn, $wrapperObj) 
+    public function __construct($settIn, $algoObj) 
     {
         if ($settIn === strval(TPL_INPUT_DEFVAL))return null;
         static::$sett = $settIn;
         
-        $this->obj = Starter::getObject(static::$sett, $wrapperObj, __CLASS__);
+        $this->obj = Starter::getObject(static::$sett);
 //        eee(get_class_methods("InputMethod"));
 //        eee($this->obj, __FILE__, __LINE__);
         
-        $this->obj->getData($this);
+        $this->obj->getData($algoObj);
     }
     
 }

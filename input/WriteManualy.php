@@ -13,7 +13,7 @@ require_once DIR_INPUT . 'InputMethod.php';
  */
 class WriteManualy extends InputMethod
 {
-    public function getData(StarterInput $divingObject)
+    public function getData(AlgoMethod $divingObject)
     {
         
     }

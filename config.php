@@ -16,6 +16,10 @@ DEFINE('DIR_ALGO', 'algo/');
 DEFINE('DIR_DB', 'db4ever/');
 DEFINE('DB_PASS', 'qser');
 DEFINE('DB_USER', 'qser');
+//
+DEFINE('CHOICES_MISTER_ANDERSON', 'Le choix, monsieur Anderson ... ');//write values on your language
+DEFINE('DEFAULT_VALUES', 'Le défaut valeurs ... ');
+
 /**
  * 
  * @param type $mixed

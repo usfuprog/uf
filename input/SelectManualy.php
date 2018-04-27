@@ -23,7 +23,7 @@ class SelectManualy extends FromDb//?
     /**
      * Get all words from the form, that was select by user
      */
-    public function getData(StarterInput $divingObject)
+    public function getData(AlgoMethod $divingObject)
     {
         $words = array();
         foreach(array_keys($_REQUEST) as $k)

@@ -22,9 +22,10 @@ class FormatePlainText extends Settings
 //        eee($sett, __FILE__, __LINE__);
 //        eee($this->getSettings("txtFile"), __FILE__, __LINE__);
         
-        $this->input = new StarterInput($this->getSettings(TPL_INPUT_NAME), $this);
         $this->algo = new StarterAlgo($this->getSettings(TPL_ALGO_NAME), $this);
-        $this->output = new StarterOutput($this->getSettings(TPL_OUTPUT_NAME), $this);
+        $this->tplData = $this->algo->getAlgoObject();
+        $this->input = new StarterInput($this->getSettings(TPL_INPUT_NAME), $this->tplData);
+        $this->output = new StarterOutput($this->getSettings(TPL_OUTPUT_NAME), $this->tplData);
 //        Starter::setFptObj($this);
 //        eee($this->output->getSett(), __FILE__, __LINE__);
 //        eee($this->getSettings('wordsCnt'), __FILE__, __LINE__);
@@ -140,12 +141,12 @@ Die();
             </div>
             <p id="resultData">
                 <?php 
-//                    var_dump($obj->input->all); 
+//                    var_dump($obj->tplData->all); 
                     
-                    if (isset($obj->input->defaultEngFraWords))
+                    if (isset($obj->tplData->defaultEngFraWords))
                     {
-                        echo "<p>Le défaut valeurs ... </p><p>";
-                        foreach ($obj->input->defaultEngFraWords as $v)
+                        echo "<p>" . DEFAULT_VALUES . "</p><p>";
+                        foreach ($obj->tplData->defaultEngFraWords as $v)
                         {
                             $wordPair = $v;
                             echo $wordPair['e'] . " - " . $wordPair['f'] . " ... ";
@@ -153,10 +154,10 @@ Die();
                         echo "</p>";
                     }
                     
-                    if (isset($obj->input->all))
+                    if (isset($obj->tplData->all))
                     {
-                        echo "<p>Le choix, monsieur Anderson ... </p><p>";
-                        foreach ($obj->input->all as $v)
+                        echo "<p>" . CHOICES_MISTER_ANDERSON . "</p><p>";
+                        foreach ($obj->tplData->all as $v)
                         {
                             echo "<ul>";
                             $wordPair = $v;

@@ -13,6 +13,5 @@
 interface InputExec 
 {
     //put your code here
-    public function getData(StarterInput $obj);
-    static public function setWrapObj(\stdClass $obj);
+    public function getData(AlgoMethod $obj);
 }

@@ -1,6 +1,3 @@
-        you forget algo1, algo2, algo3   :) :) :) Is it little strange, to create functions in InputMethod.php that 
-                calculate results on arrays with data ??????????????????????????????????????????????????????????????
-
 <?php
 require_once DIR_INPUT . 'FromDb.php';
 /**
@@ -10,13 +7,13 @@ require_once DIR_INPUT . 'FromDb.php';
  */
 class ChooseRandomly extends FromDb
 {
-    public function getData(StarterInput $divingObject)
+    public function getData(AlgoMethod $divingObject)
     {
 //        parent::__construct();
 //        eee("chooran", __FILE__, __LINE__);
 //        eee(static::$wrapObj->getFormSett("wordsCnt"), __FILE__, __LINE__);
-        $countWords = static::$wrapObj->getFormSett("wordsCnt");
-        $wrongTranslate = static::$wrapObj->getFormSett("badTranslation");
+        $countWords = $divingObject->wrapperObj->getFormSett("wordsCnt");
+        $wrongTranslate = $divingObject->wrapperObj->getFormSett("badTranslation");
 //        eee($countWords . " ___ " . $wrongTranslate . " ___ ", __FILE__, __LINE__);
         $res1 = self::$db->query(2, $countWords, "fra");
 //        eee($res1, __FILE__, __LINE__);
@@ -30,10 +27,10 @@ class ChooseRandomly extends FromDb
         
         $divingObject->defaultEngFraWords = $pearlOne;
         $divingObject->badTranslation = $pearlTwo;
-        $divingObject->all = $this->mergeInOneArr($pearlOne, $pearlTwo);
-        $divingObject->all = $this->finalRotate($divingObject->all);
+        $divingObject->all = $divingObject->mergeInOneArr($pearlOne, $pearlTwo);
+        $divingObject->all = $divingObject->finalRotate($divingObject->all);
 //        eee($divingObject->all, __FILE__, __LINE__);
-        $divingObject->all = $this->finalRotate($divingObject->all);
+        $divingObject->all = $divingObject->finalRotate($divingObject->all);
         
 //        eee($pearlTwo, __FILE__, __LINE__);
     }

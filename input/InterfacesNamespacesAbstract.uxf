@@ -12,14 +12,8 @@
     <panel_attributes>/AbstractClass/
 InputMethod implements InputExec
 
-static public function setWrapObj(\stdClass $obj);
-protected:
 
-static $wrapObj;
-mergeInOneArr(array, array);
-finalRotate(array);
-makeFakeFromSelected(array);
-</panel_attributes>
+public function getData(AlgoMethod $obj)</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -73,7 +67,7 @@ static $db;
 SelectManualy
 
 public: 
-function getData(StarterInput)
+function getData(AlgoMethod)
 
 </panel_attributes>
     <additional_attributes/>
@@ -90,7 +84,7 @@ function getData(StarterInput)
 ChooseRandomly
 
 public: 
-function getData(StarterInput)
+function getData(AlgoMethod)
 </panel_attributes>
     <additional_attributes/>
   </element>

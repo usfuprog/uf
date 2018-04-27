@@ -13,7 +13,6 @@
  */
 class Starter 
 {
-    static protected $fpt;
     /**
      * Get settings from Starter*.php and return object, of require class, back.
      * Get stdClass object, wich is wrapperObject, in this program this is FormatePlainText, and set static 
@@ -25,7 +24,7 @@ class Starter
      * @return \className
      * @throws Exception
      */
-    public static function getObject($settings, stdClass $wrapperObj = null, $callFrom = null)
+    public static function getObject($settings)
     {
 //        echo " __ " . $settings;
         $className = preg_replace_callback("/^[\w]{1}|[\s]{1}[\w]{1}/", 
@@ -37,10 +36,10 @@ class Starter
         if (!$obj)
             throw new Exception("settings FAIL. No object was created !!! Class: " . $settings);
         
-        $name = preg_replace("/Starter/", "", $callFrom, 1) . "Method";
+//        $name = preg_replace("/Starter/", "", $callFrom, 1) . "Method";
         
-        if ($name !== "Method" && is_a($obj, $name))
-            $obj->setWrapObj($wrapperObj);
+//        if ($name !== "Method" && is_a($obj, $name))
+//            $obj->setWrapObj($wrapperObj);
         
         return $obj;
     }
