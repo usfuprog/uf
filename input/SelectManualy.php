@@ -11,13 +11,14 @@ require_once DIR_INPUT . 'FromDb.php';
  *
  * @author usfuprog
  */
-class SelectManualy extends FromDb//?
+class SelectManualy extends FromDb 
 {
     public function __construct() 
     {
 //        echo __DIR__;
 //        echo __FILE__;
 //        echo dirname(__FILE__);
+        parent::__construct();
     }
     
     /**
@@ -35,7 +36,7 @@ class SelectManualy extends FromDb//?
                     }
         }
 //        eee($words, __FILE__, __LINE__);
-        
+        self::$db->query(5, $words);
     }
     
 }

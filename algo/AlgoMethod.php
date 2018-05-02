@@ -28,9 +28,11 @@ class AlgoMethod
     }
     
     /**
-     * 
+     * Get array with word => translate in first argument, and 0 => word(fake) in second. Create in first 
+     * array property 'fake' with words from second array.
      * @param array $arr1
      * @param array $arr2
+     * @return array
      */
     public function mergeInOneArr(array $arr1, array $arr2)
     {
@@ -47,8 +49,10 @@ class AlgoMethod
     }
     
     /**
-     * 
+     * Get array 0 => array(0 => word1, 1 => word2, 2 => word3), 1 => array( ... 
+     * and randomly change position of words on second and third place. 
      * @param array $arr
+     * @return array
      */
     public function finalRotate(array $arr)
     {
@@ -69,7 +73,10 @@ class AlgoMethod
         return $res;
     }
     /**
-     * 
+     * Get array with property 'e' => word and 'f' => word and create array with one word(0 => word) with condition, 
+     * that this word not equal to word in first array, under the same index. Means, if first 
+     * array 0 => array('e' => fresh, 'f' => frais), in second array 0 => word can be any word from property 'f' from 
+     * first array, BUT NEVER word 'frais'.
      * @param array $arr
      * @return array
      */
@@ -85,7 +92,7 @@ class AlgoMethod
 //            eee($randKey . " ___ " . $keys[0] . " ___ " . $keys[1]);
             $res[] = array($arr[$randKey]['f']);
         }
-        
+//        eee($res, __FILE__, __LINE__);
         return $res;
     }
     

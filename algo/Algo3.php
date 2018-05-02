@@ -11,7 +11,7 @@ require_once DIR_ALGO . 'AlgoMethod.php';
  *
  * @author usfuprog
  */
-class Algo3 
+class Algo3 extends AlgoMethod 
 {
     
 }

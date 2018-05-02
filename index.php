@@ -26,9 +26,8 @@ class FormatePlainText extends Settings
         $this->tplData = $this->algo->getAlgoObject();
         $this->input = new StarterInput($this->getSettings(TPL_INPUT_NAME), $this->tplData);
         $this->output = new StarterOutput($this->getSettings(TPL_OUTPUT_NAME), $this->tplData);
-//        Starter::setFptObj($this);
 //        eee($this->output->getSett(), __FILE__, __LINE__);
-//        eee($this->getSettings('wordsCnt'), __FILE__, __LINE__);
+        eee($this->getSettings(), __FILE__, __LINE__);
 //        eee(StarterOutput::getSett());
 //        eee($this->getSettings('badTranslation'), __FILE__, __LINE__);
 //        eee($sett, __FILE__, __LINE__);
@@ -62,11 +61,12 @@ Die();
 <!DOCTYPE html>
 <html>
     <head>
-        <script src="jq/jquery-3.3.1.js"></script>
+        <script src="jq/jquery-3.1.1.js"></script>
 <!--        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="jq/jquery-ui.js"></script>
         <link href="jq/jquery-ui.css" rel="stylesheet"> -->
         <script src="jsHere.js"></script>
+    <p id="jqs"></p>
         <script>
             try
             {
@@ -80,6 +80,7 @@ Die();
             {
                 alert("jQuery NOT FOUND. Library jQuery is REQUIRED for correct work of this site.");
             }
+            
         </script>
     </head>
     <body style="margin-bottom: 256px">

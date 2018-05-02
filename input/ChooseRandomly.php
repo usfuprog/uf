@@ -15,14 +15,14 @@ class ChooseRandomly extends FromDb
         $countWords = $divingObject->wrapperObj->getFormSett("wordsCnt");
         $wrongTranslate = $divingObject->wrapperObj->getFormSett("badTranslation");
 //        eee($countWords . " ___ " . $wrongTranslate . " ___ ", __FILE__, __LINE__);
-        $res1 = self::$db->query(2, $countWords, "fra");
+//        $res1 = self::$db->query(2, $countWords, "fra");
 //        eee($res1, __FILE__, __LINE__);
         $pearlOne = self::$db->query(3, $countWords);
 //        eee($pearlOne, __FILE__, __LINE__);
         if ($wrongTranslate === 'db')
             $pearlTwo = self::$db->query(4, $countWords, $pearlOne);
         else 
-            $pearlTwo = $this->makeFakeFromSelected($pearlOne);
+            $pearlTwo = $divingObject->makeFakeFromSelected($pearlOne);
 //        eee($pearlTwo, __FILE__, __LINE__);
         
         $divingObject->defaultEngFraWords = $pearlOne;

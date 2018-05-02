@@ -39,6 +39,8 @@ class db4ever
                 "SELECT word FROM :tbl ORDER BY RAND() LIMIT :limit";
         $this->querys[] = //func3
                 "SELECT word FROM fra WHERE word NOT IN(:notIn) ORDER BY RAND() LIMIT :limit";
+        $this->querys[] = 
+                "SELECT ";
 //                "SELECT * FROM fra WHERE id = ?";
 //SELECT eng.word, fra.word FROM eng, fra, mt_eng_fra WHERE eng.id = mt_eng_fra.eng_id AND 
 //fra.id = mt_eng_fra.fra_id ORDER BY RAND() LIMIT 10;
@@ -155,9 +157,7 @@ class db4ever
             $notIn[] = $word['f'];
         }
 //        eee($notIn, __FILE__, __LINE__);
-        $quest2 = str_pad("", count($notIn), "?");
-//        eee($quest2);
-        $quest2 = preg_replace("/[\?]{1}/", "?, ", $quest2, strlen($quest2) - 1);//quest2 last
+        $quest2 = $this->prepQuestEnough(count($notIn));
 //        eee($quest2);
         $quest3 = $this->querys[3];
 //        eee($quest3);
@@ -173,6 +173,14 @@ class db4ever
         return $stm->fetchAll(PDO::FETCH_NUM);
     }
     /**
+     * 
+    */
+    public function func5($arr)
+    {
+       $words = array_shift($arr);
+       eee($words, __FILE__, __LINE__);
+    }
+    /**
      * Destroy connection to a database.
      */
     public function closeConnection()
@@ -186,5 +194,18 @@ class db4ever
     public function getConnectionObj()
     {
         return $this;
+    }
+    /**
+     * 
+     * @param int $num
+     * @return string
+     */
+    private function prepQuestEnough($num)
+    {
+        $tmp = str_replace("?", "?, ", str_pad("", $num, "?"));
+        
+        $res = substr($tmp, 0, strlen($tmp) - 2);
+        
+        return $res;
     }
 }
