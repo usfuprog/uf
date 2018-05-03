@@ -84,13 +84,22 @@ class AlgoMethod
     {
         $res = [];
 //        eee($arr, __FILE__, __LINE__);
-        foreach ($arr as $k => $v)
+        //"If we are lucky, there would be one word"
+        if (count($arr) == 1)
         {
-//            eee($v);
-            $keys = array_rand($arr, 2);
-            $randKey = $keys[0] == $k ? $keys[1] : $keys[0];
-//            eee($randKey . " ___ " . $keys[0] . " ___ " . $keys[1]);
-            $res[] = array($arr[$randKey]['f']);
+            $res[] = array($arr[0]['f'], $arr[0]['f']);// << ... >>
+        }
+        //"And if unlucky? There would be many words"
+        else 
+        {
+            foreach ($arr as $k => $v)
+            {
+    //            eee($v);
+                $keys = array_rand($arr, 2);
+                $randKey = $keys[0] == $k ? $keys[1] : $keys[0];
+    //            eee($randKey . " ___ " . $keys[0] . " ___ " . $keys[1]);
+                $res[] = array($arr[$randKey]['f']);
+            }
         }
 //        eee($res, __FILE__, __LINE__);
         return $res;
