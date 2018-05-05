@@ -13,11 +13,21 @@ require_once DIR_INPUT . 'FromDb.php';
  */
 class SelectManualy extends FromDb 
 {
+    private $pearlOne="";
+    
     public function __construct() 
     {
-//        echo __DIR__;
-//        echo __FILE__;
-//        echo dirname(__FILE__);
+        $this->words = array();
+        foreach(array_keys($_REQUEST) as $k)
+        {
+            if (preg_match("/^wrd[\w\s]+/", $k))
+                    {
+                        $this->words[preg_replace("/wrd/", "", $k, 1)] = $_REQUEST[$k];
+//                        eee(preg_replace("/wrd/", "", $k, 1), __FILE__, __LINE__);
+                    }
+        }
+//        eee($words, __FILE__, __LINE__);
+//        self::$db->query(5, $words);
         parent::__construct();
     }
     
@@ -26,17 +36,27 @@ class SelectManualy extends FromDb
      */
     public function getData(AlgoMethod $divingObject)
     {
-        $words = array();
-        foreach(array_keys($_REQUEST) as $k)
+        $countWords = count($this->words);
+        if (!$countWords)return 0;
+        
+        $wrongTranslate = $divingObject->wrapperObj->getFormSett("badTranslation");
+//        eee($this->words, __FILE__, __LINE__);
+        $pearlOne = [];
+        foreach ($this->words as $k => $v)
         {
-            if (preg_match("/^wrd[\w\s]+/", $k))
-                    {
-                        $words[preg_replace("/wrd/", "", $k, 1)] = $_REQUEST[$k];
-//                        eee(preg_replace("/wrd/", "", $k, 1), __FILE__, __LINE__);
-                    }
+            $pearlOne[] = array('e'=>$k, 'f'=>$v);
         }
-//        eee($words, __FILE__, __LINE__);
-        self::$db->query(5, $words);
+//        eee($pearlOne, __FILE__, __LINE__);
+        
+        if ($wrongTranslate === 'db')
+            $pearlTwo = self::$db->query(4, $countWords, $pearlOne);
+        else 
+            $pearlTwo = $divingObject->makeFakeFromSelected($pearlOne);
+        
+        $divingObject->defaultEngFraWords = $pearlOne;
+        $divingObject->badTranslation = $pearlTwo;
+        $divingObject->all = $divingObject->mergeInOneArr($pearlOne, $pearlTwo);
+        $divingObject->all = $divingObject->finalRotate($divingObject->all);
     }
     
 }

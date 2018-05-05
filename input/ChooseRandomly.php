@@ -18,7 +18,7 @@ class ChooseRandomly extends FromDb
 //        $res1 = self::$db->query(2, $countWords, "fra");
 //        eee($res1, __FILE__, __LINE__);
         $pearlOne = self::$db->query(3, $countWords);
-//        eee($pearlOne, __FILE__, __LINE__);
+        eee($pearlOne, __FILE__, __LINE__);
         if ($wrongTranslate === 'db')
             $pearlTwo = self::$db->query(4, $countWords, $pearlOne);
         else 
@@ -30,7 +30,7 @@ class ChooseRandomly extends FromDb
         $divingObject->all = $divingObject->mergeInOneArr($pearlOne, $pearlTwo);
         $divingObject->all = $divingObject->finalRotate($divingObject->all);
 //        eee($divingObject->all, __FILE__, __LINE__);
-        $divingObject->all = $divingObject->finalRotate($divingObject->all);
+//        $divingObject->all = $divingObject->finalRotate($divingObject->all);
         
 //        eee($pearlTwo, __FILE__, __LINE__);
     }

@@ -126,14 +126,16 @@ Die();
             <div name="countWords">
                 <div>&nbsp;</div>
                 <label for="countOfWords">Count of words:</label>
-                <input type="number" value="10" min="1" max="100" name="wordsCnt" />
+                <input type="number" min="1" max="100" name="wordsCnt" 
+                       value=<?php echo $obj->getFormSett("wordsCnt") == null ? '10' : 
+                               "'" . $obj->getFormSett('wordsCnt') . "'"; ?> />
             </div>
             <div style="margin: 0 auto; width: 50%;" name="moreServicesProvide">
                 <div name="nameFile">
                     <label for="nameFile">Text file name:</label>
-                    <input type="text" name="txtFile" value=
-                        <?php echo $obj->getFormSett("txtFile"); ?> 
-                           >
+                    <input type="text" name="txtFile" 
+                        value=<?php echo $obj->getFormSett("txtFile") == null ? "''" : 
+                                "'" . $obj->getFormSett("txtFile") . "'"; ?> >
                 </div>
                 <br>
                 <div name="choosedWords">

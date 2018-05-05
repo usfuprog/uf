@@ -4,12 +4,12 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>400</x>
+      <x>560</x>
       <y>150</y>
-      <w>660</w>
+      <w>390</w>
       <h>270</h>
     </coordinates>
-    <panel_attributes>SimpleClass
+    <panel_attributes>Class AlgoMethod
 
 public:
 $defaultEngFraWords;
@@ -22,6 +22,30 @@ mergeInOneArr(array, array);
 finalRotate(array);
 makeFakeFromSelected(array);
 </panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>540</x>
+      <y>410</y>
+      <w>160</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;90.0;140.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>460</x>
+      <y>500</y>
+      <w>190</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>Class AlgoMethod1
+public:
+__construct()</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>

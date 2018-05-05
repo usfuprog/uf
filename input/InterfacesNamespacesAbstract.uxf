@@ -61,14 +61,17 @@ static $db;
       <x>60</x>
       <y>680</y>
       <w>260</w>
-      <h>150</h>
+      <h>180</h>
     </coordinates>
     <panel_attributes>Class
 SelectManualy
 
 public: 
+__construct
 function getData(AlgoMethod)
 
+private:
+$words;
 </panel_attributes>
     <additional_attributes/>
   </element>
