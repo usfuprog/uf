@@ -13,7 +13,7 @@ $data = $obj->query(1);
 $res = array();
 foreach ($data as $k => $v)
 {
-    $res[] = $v['e'] . ' - ' . $v['f'];
+    $res[] = htmlspecialchars($v['e'], ENT_QUOTES) . ' - ' . htmlspecialchars($v['f'], ENT_QUOTES);
     
 //    break;
 }

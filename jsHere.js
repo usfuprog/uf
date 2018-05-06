@@ -72,6 +72,8 @@ function starterPart2()
         name = name.substr(0, name.search(" - "));
         var translate = jqObj.val();
         translate = translate.substring(translate.search(" - ") + 3, translate.length);
+        name = name.replace('\'', '&#039;');
+        translate = translate.replace('\'', '&#039;');
 //        alert(translate);
         $("[name = choosedWords").append
         ("<div><button type='button'>X</button> " + jqObj.val() + "</div>").append

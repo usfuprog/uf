@@ -13,7 +13,7 @@ require_once DIR_INPUT . 'FromDb.php';
  */
 class SelectManualy extends FromDb 
 {
-    private $pearlOne="";
+    private $words;
     
     public function __construct() 
     {
