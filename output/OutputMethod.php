@@ -14,11 +14,5 @@ require_once DIR_OUTPUT . "OutputExec.php";
 
 abstract class OutputMethod implements OutputExec
 {
-    protected static $wrapObj;
     
-    static public function setWrapObj(\stdClass $obj) 
-    {
-        static::$wrapObj = $obj;
-//        eee("HURA OUTPUT", __FILE__, __LINE__);
-    }
 }

@@ -143,33 +143,7 @@ Die();
                 </div>
             </div>
             <p id="resultData">
-                <?php 
-//                    var_dump($obj->tplData->all); 
-                    
-                    if (isset($obj->tplData->defaultEngFraWords))
-                    {
-                        echo "<p>" . DEFAULT_VALUES . "</p><p>";
-                        foreach ($obj->tplData->defaultEngFraWords as $v)
-                        {
-                            $wordPair = $v;
-                            echo $wordPair['e'] . " - " . $wordPair['f'] . " ... ";
-                        }
-                        echo "</p>";
-                    }
-                    
-                    if (isset($obj->tplData->all))
-                    {
-                        echo "<p>" . CHOICES_MISTER_ANDERSON . "</p><p>";
-                        foreach ($obj->tplData->all as $v)
-                        {
-                            echo "<ul>";
-                            $wordPair = $v;
-                            echo "<li>" . $wordPair[0] . " (...) " . $wordPair[1] . " ou " . $wordPair[2] . " ... </li>";
-                            echo "</ul>";
-                        }
-                        echo "</p>";
-                    }
-                ?>
+                
             </p>
         </form>
         <?php //eee($obj, __FILE__, __LINE__) ?>

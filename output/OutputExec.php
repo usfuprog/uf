@@ -13,5 +13,5 @@
 interface OutputExec 
 {
     //put your code here
-    static public function setWrapObj(\stdClass $obj);
+    function dataOut(AlgoMethod $obj);
 }

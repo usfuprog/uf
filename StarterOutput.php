@@ -28,8 +28,7 @@ class StarterOutput extends Starter
         
 //        eee(get_class_methods("InputMethod"));
 //        eee($this->obj, __FILE__, __LINE__);
-        
-//        $this->obj->getData();
+        $this->obj->dataOut($wrapperObj);
     }
     
 }

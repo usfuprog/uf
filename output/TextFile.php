@@ -14,5 +14,17 @@ require_once DIR_OUTPUT . "OutputMethod.php";
  */
 class TextFile extends OutputMethod 
 {
-    
+    public function dataOut(AlgoMethod $obj)
+    {
+        eee("DATA IN FILE");
+        $fileGo = $obj->wrapperObj->getFormSett("txtFile");
+        eee($fileGo);
+        if ($fileGo === '')
+            return;
+        eee(is_dir($fileGo));
+        eee(pathinfo($fileGo));
+    }
 }
+
+
+?>
