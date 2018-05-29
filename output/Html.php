@@ -18,26 +18,26 @@ class Html extends OutputMethod
     {
         if (isset($obj->defaultEngFraWords))
         {
-            echo "<p>" . DEFAULT_VALUES . "</p><p>";
+            $this->result .= "<p>" . DEFAULT_VALUES . "</p><p>";
             foreach ($obj->defaultEngFraWords as $v)
             {
                 $wordPair = $v;
-                echo $wordPair['e'] . " - " . $wordPair['f'] . " ... ";
+                $this->result .= $wordPair['e'] . " - " . $wordPair['f'] . " ... ";
             }
-            echo "</p>";
+            $this->result .= "</p>";
         }
 
         if (isset($obj->all))
         {
-            echo "<p>" . CHOICES_MISTER_ANDERSON . "</p><p>";
+            $this->result .= "<p>" . CHOICES_MISTER_ANDERSON . "</p><p>";
             foreach ($obj->all as $v)
             {
-                echo "<ul>";
+                $this->result .= "<ul>";
                 $wordPair = $v;
-                echo "<li>" . $wordPair[0] . " (...) " . $wordPair[1] . " ou " . $wordPair[2] . " ... </li>";
-                echo "</ul>";
+                $this->result .= "<li>" . $wordPair[0] . " (...) " . $wordPair[1] . " ou " . $wordPair[2] . " ... </li>";
+                $this->result .= "</ul>";
             }
-            echo "</p>";
+            $this->result .= "</p>";
         }
     }
 }

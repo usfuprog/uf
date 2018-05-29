@@ -14,5 +14,5 @@ require_once DIR_OUTPUT . "OutputExec.php";
 
 abstract class OutputMethod implements OutputExec
 {
-    
+    public $result = "";
 }

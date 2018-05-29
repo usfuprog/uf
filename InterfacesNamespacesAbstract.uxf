@@ -196,7 +196,9 @@ __construct($settIn, $wrapperObj);
 private:
 object obj;
 protected:
-static string sett;</panel_attributes>
+static string sett;
+pbulic:
+function dataOut();</panel_attributes>
     <additional_attributes/>
   </element>
   <element>

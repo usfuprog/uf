@@ -143,7 +143,7 @@ Die();
                 </div>
             </div>
             <p id="resultData">
-                
+                <?php echo $obj->output->dataOut(); ?>
             </p>
         </form>
         <?php //eee($obj, __FILE__, __LINE__) ?>

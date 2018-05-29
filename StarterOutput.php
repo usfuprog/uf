@@ -30,5 +30,12 @@ class StarterOutput extends Starter
 //        eee($this->obj, __FILE__, __LINE__);
         $this->obj->dataOut($wrapperObj);
     }
+    /**
+     * 
+     */
+    public function dataOut()
+    {
+       return $this->obj->result;
+    }
     
 }
