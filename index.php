@@ -27,7 +27,7 @@ class FormatePlainText extends Settings
         $this->input = new StarterInput($this->getSettings(TPL_INPUT_NAME), $this->tplData);
         $this->output = new StarterOutput($this->getSettings(TPL_OUTPUT_NAME), $this->tplData);
 //        eee($this->output->getSett(), __FILE__, __LINE__);
-        eee($this->getSettings(), __FILE__, __LINE__);
+//        eee($this->getSettings(), __FILE__, __LINE__);
 //        eee(StarterOutput::getSett());
 //        eee($this->getSettings('badTranslation'), __FILE__, __LINE__);
 //        eee($sett, __FILE__, __LINE__);

@@ -13,5 +13,9 @@ require_once DIR_ALGO . 'AlgoMethod.php';
  */
 class Algo2 extends AlgoMethod 
 {
+    public function __construct() 
+    {
+        throw new Exception("INFO: This algorythm was not implement yet ... ");
+    }
     
 }

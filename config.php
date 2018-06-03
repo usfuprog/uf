@@ -16,6 +16,8 @@ DEFINE('DIR_ALGO', 'algo/');
 DEFINE('DIR_DB', 'db4ever/');
 DEFINE('DB_PASS', 'qser');
 DEFINE('DB_USER', 'qser');
+
+DEFINE('MAINTAIN', false);
 //
 DEFINE('CHOICES_MISTER_ANDERSON', 'Le choix, monsieur Anderson ... ');//write values on your language
 DEFINE('DEFAULT_VALUES', 'Le défaut valeurs ... ');
@@ -32,13 +34,20 @@ DEFINE('DEFAULT_VALUES', 'Le défaut valeurs ... ');
 function eee($var, $file = null, $line = null)
 {
 //    return;
+    if (!MAINTAIN)
+    {
+        if (!is_scalar($var))
+            return;
+        $file = $line = null;
+    }
+    
     $file = str_replace("\\", "/", $file);
     echo "<br>" . 
             str_pad(implode(preg_split("/^[\/|\w].*[\/{1}]/", $file, -1)), 100, ".", STR_PAD_LEFT) . 
             " : " . $line . " : " . str_pad($file, 75, "~", STR_PAD_LEFT) . "<br>[";//                   "/[/]+[\w|\.]*$/"
     if (is_bool($var) === true && $var)$var = "true";
     if (is_bool($var) === true && !$var)$var = "false";
-    
+        
     echo is_scalar($var) ? nl2br($var) : var_export($var, true);
 //    echo "________<br>";
 //    echo is_scalar($var) ? nl2br($var) : var_dump($var);

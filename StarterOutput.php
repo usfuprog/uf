@@ -35,7 +35,8 @@ class StarterOutput extends Starter
      */
     public function dataOut()
     {
-       return $this->obj->result;
+        if ($this->obj)
+            return $this->obj->result;
     }
     
 }
