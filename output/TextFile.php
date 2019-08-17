@@ -54,34 +54,38 @@ class TextFile extends OutputMethod
 //        eee(ini_get('error_log'));
 //        eee(__DIR__);
         $info = pathinfo($fileGo);
+//        echo isset($info['extension']) ? $info['extension'] : "not set now";
+        if (!isset($info['extension']) || $info['extension'] != 'txt')$info['extension'] = 'txt';
+//        $info['dirname'] = '../' . USER_FOLDER;
+//        echo $info['dirname'] . "________" . $info['filename'] . "__________ ." . $info['extension'];
+//        $this->toFile = $dirname . '/' . $info['filename'];
+        if (defined('USER_FOLDER') && is_dir('../' . USER_FOLDER))
+          $info['dirname'] = '../' . USER_FOLDER . "/";
+        else
+          $info['dirname'] = "";
+//        echo $info['dirname'] . "________" . $info['filename'] . "__________ ." . $info['extension'];
         
-        if ($info['dirname'] != '.' && isset($info['filename']))
-        {
-//            eee($info, __FILE__, __LINE__);
-            $this->toFile = $fileGo;
-//            $handler = fopen($fileGo, 'w');
-        }
+//        eee(defined('USER_FOLDER'), __FILE__, __LINE__);
         
-        if ($info['dirname'] == '.')
-        {
-            $logDir = pathinfo(ini_get('error_log'))['dirname'];
-            
-            $dirname = $logDir ? $logDir : str_replace('\\', '/', dirname(__DIR__));
-//            eee(realpath(__DIR__));
-//            eee($dirname);
-            $this->toFile = $dirname . '/' . $info['filename'];
-            if (isset($info['extension']))
-                $this->toFile .= "." . $info['extension'];
-        }
-        
+        $this->toFile =  $info['dirname'] . $info['filename'] . "." . $info['extension'];
 //        if (file_exists($this->toFile))
 //        {
 //            $this->result = "CAN NOT WRITE TO FILE: FILE ALREADY EXISTS";
 //            return;
 //        }
         
-        $handler = fopen($this->toFile, 'w');
+//        $webPath = __FILE__;
+//        $webPath = explode('\\', $webPath);
+//        array_pop($webPath);
+//        $webPath = implode('\\', $webPath) . "\\" . $info['filename'] . (isset($info['extension']) ? "." . $info['extension'] : '');
+//        $this->toFile = $webPath;
         
+        $handler = fopen($this->toFile, 'w');
+        if (file_exists($this->toFile))
+        {
+            echo "<a href='" . $this->toFile . "' target='_blanc'>Link</a>";
+            
+        }
         
         return $handler;
     }

@@ -24,7 +24,7 @@ class db4ever
         try
         {
             if (static::$obj == null)
-                static::$obj = new PDO("mysql:host=localhost;dbname=engFra", DB_USER, DB_PASS);
+                static::$obj = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASS);
             
         } catch (PDOException $e)
         {

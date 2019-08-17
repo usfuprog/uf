@@ -13,15 +13,21 @@ DEFINE('DIR_INPUT', 'input/');
 DEFINE('DIR_OUTPUT', 'output/');
 DEFINE('DIR_ALGO', 'algo/');
 //
-DEFINE('DIR_DB', 'db4ever/');
-DEFINE('DB_PASS', 'qser');
-DEFINE('DB_USER', 'qser');
-
-DEFINE('MAINTAIN', false);
+DEFINE('DIR_DB', 'db4ever/');//     <<<      if go out 
+	define('DB_NAME', 'engfra');//     <<<      if go out 
+	define('DB_USER', 'qser');//     <<<      if go out 
+	define('DB_HOST', 'localhost');//     <<<      if go out 
+	define('DB_PASS', 'qser');//     <<<      if go out 
+	
+DEFINE('MAINTAIN', false);//     <<<      if go out 
 //
 DEFINE('CHOICES_MISTER_ANDERSON', 'Le choix, monsieur Anderson ... ');//write values on your language
 DEFINE('DEFAULT_VALUES', 'Le défaut valeurs ... ');
 
+
+
+define ('USER_FOLDER', 'userdata');
+//
 /**
  * 
  * @param type $mixed

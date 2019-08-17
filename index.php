@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 require_once 'Settings.php';
 require_once 'StarterInput.php';
 require_once 'StarterOutput.php';
@@ -61,6 +61,8 @@ Die();
 <!DOCTYPE html>
 <html>
     <head>
+        <meta http-equiv="Content-Type" content="text/html" />
+        <meta charset="utf-8" />
         <script src="jq/jquery-3.1.1.js"></script>
 <!--        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="jq/jquery-ui.js"></script>
@@ -147,5 +149,18 @@ Die();
             </p>
         </form>
         <?php //eee($obj, __FILE__, __LINE__) ?>
+        <p>
+                Output, который генерирует app в html или текстовый файл, используется для создания mp3 файлов. При прослушке файлов 
+                происходит изучение новых слов языка. Выбраные слова будут иметь коректный и некоректный перевод, что является feature 
+                данного способа изучения слов. Кроме формата outputa можно выбрать сколько слов будет начтено из db. Это в случае если 
+                app будет выбирать их случайно из db(choose randomly в первом selecte). Если же в первом select выбрать select manualy, 
+                то произойдет запрос JQ AJAX и возникнет выбор всех слов из db. Кликая на слова можно их выбрать, и тогда процесс подбора 
+                правильного и неправильного перевода будет только с использованием данных слов. 
+        </p>
+        <p>
+                Source code with UML: <a href='https://github.com/usfuprog/uf/tree/francais' target='_blank'>github</a>
+        </p>
+
+
     </body>
 </html>
