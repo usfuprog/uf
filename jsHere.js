@@ -1,4 +1,4 @@
-/* 
+﻿/* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -116,3 +116,20 @@ function checkAjax(elem)
     
 }
 
+
+$( document ).ready(function() {
+
+//    console.log( window.history );
+//    var startHistoryCount = window.history.length;
+//    console.log( startHistoryCount );
+    
+//    $( "#to_main" ).on( "click", function() {
+//    console.log( startHistoryCount );
+//    window.history.go( -1 );
+//    });
+////    window.history.go( -1 );
+    $( "#to_main" ).on( "click", function() {
+    //alert($("#to_main").data("hidden"));
+    window.location=$("#to_main").data("hidden");
+    });
+});

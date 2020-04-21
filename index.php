@@ -1,4 +1,4 @@
-﻿<?php
+<?php 
 require_once 'Settings.php';
 require_once 'StarterInput.php';
 require_once 'StarterOutput.php';
@@ -86,6 +86,7 @@ Die();
         </script>
     </head>
     <body style="margin-bottom: 256px">
+        <button type="button" id="to_main" data-hidden=<?php echo PEVNYJ_LINK ?>><?php echo htmlspecialchars("<< go back to main site "); ?></button>
         <div style="height: 100px;" name="wordsListWrapper">
             <select name="wordsList" multiple="multiple" style="height: 100%">
                 
@@ -150,12 +151,9 @@ Die();
         </form>
         <?php //eee($obj, __FILE__, __LINE__) ?>
         <p>
-                Output, который генерирует app в html или текстовый файл, используется для создания mp3 файлов. При прослушке файлов 
-                происходит изучение новых слов языка. Выбраные слова будут иметь коректный и некоректный перевод, что является feature 
-                данного способа изучения слов. Кроме формата outputa можно выбрать сколько слов будет начтено из db. Это в случае если 
-                app будет выбирать их случайно из db(choose randomly в первом selecte). Если же в первом select выбрать select manualy, 
-                то произойдет запрос JQ AJAX и возникнет выбор всех слов из db. Кликая на слова можно их выбрать, и тогда процесс подбора 
-                правильного и неправильного перевода будет только с использованием данных слов. 
+                <?php include 'getInfo.php';
+                  //echo $info;
+                ?>
         </p>
         <p>
                 Source code with UML: <a href='https://github.com/usfuprog/uf/tree/francais' target='_blank'>github</a>
