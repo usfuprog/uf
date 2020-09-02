@@ -1,8 +1,8 @@
-﻿2018-02-17
+﻿2020-09-02
 
 
  This is a small project, that help can learn foreign language. The main idea of this method:
- 1. You have database with english words, and their translation to the language you study(francais in my case).
+ 1. You have database with english words, and their translation to the language you study.
  2. You want to select some of this words, and create output with method you choose. This output will be used to 
  create mp3 sound files to learn language. 
  3. One of the possible modification of the plain text will be - 
@@ -13,12 +13,12 @@
  eng3 IS fra3 OR fraX(choosed randomly from all selected words, or from database) on the line4
  
  This means, computer will take english word, and offer right and wrong translation, randomly on the first or 
- second place. This will activate choices beetween two possibilities(and also true/false answer) in brain, and 
- will made(I hope) study process more effective. 
+ second place. This will activate choices beetween two possibilities in brain, and 
+ will made study process more effective. 
  
   With procedure code(without building OOP project, UML diagrams, and comments to each function)
   this functionality can be achive in 20 lines. The main problem of this 20 lines is, that after 3 monthes, it is 
-  hard to tell, how they work, and it is hard(impossible to be honest) to extends this code for more functionality. 
+  hard to tell, how they work, and it is hard to extends this code for more functionality. 
   
   Beside this, even in such small project, I want have some start options, like: 
   
